@@ -5,8 +5,8 @@ async function response(req, res) {
     This function handles incoming HTTP requests and returns data
      */
     var file = "";
-    if (req.url === "/" || req.url.slice(0, 4) === "/tts") {
-        file = __dirname + "/demo.html"
+    if (req.url === "/") {
+        file = __dirname + "/index.html"
     } else {
         file = __dirname + req.url;
     }
