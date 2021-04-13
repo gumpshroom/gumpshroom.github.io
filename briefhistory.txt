@@ -33,7 +33,7 @@ Their form agrees with the predictions of the proposal that the universe has no 
 imaginary time direction; but further observations will be necessary to distinguish this proposal from other
 possible explanations for the fluctuations in the background. However, within a few years we should know
 whether we can believe that we live in a universe that is completely self-contained and without beginning or
-end.CHAPTER 1
+end. chapter 1
 OUR PICTURE OF THE UNIVERSE
 A well-known scientist (some say it was Bertrand Russell) once gave a public lecture on astronomy. He
 described how the earth orbits around the sun and how the sun, in turn, orbits around the center of a vast
@@ -299,7 +299,7 @@ may not even affect our lifestyle. But ever since the dawn of civilization, peop
 events as unconnected and inexplicable. They have craved an understanding of the underlying order in the
 world. Today we still yearn to know why we are here and where we came from. Humanity's deepest desire for
 knowledge is justification enough for our continuing quest. And our goal is nothing less than a complete
-description of the universe we live in.CHAPTER 2
+description of the universe we live in. chapter 2
 SPACE AND TIME
 Our present ideas about the motion of bodies date back to Galileo and Newton. Before them people believed
 Aristotle, who said that the natural state of a body was to be at rest and that it moved only if driven by a force or
@@ -615,7 +615,7 @@ exist, forever was replaced by the notion of a dynamic, expanding universe that 
 time ago, and that might end at a finite time in the future. That revolution forms the subject of the next chapter.
 And years later, it was also to be the starting point for my work in theoretical physics. Roger Penrose and I
 showed that Einstein's general theory of relativity implied that the universe must have a beginning and,
-possibly, an end.CHAPTER 3
+possibly, an end. chapter 3
 THE EXPANDING UNIVERSE
 If one looks at the sky on a clear, moonless night, the brightest objects one sees are likely to be the planets
 Venus, Mars, Jupiter, and Saturn. There will also be a very large number of stars, which are just like our own
@@ -941,7 +941,7 @@ small that one could no longer ignore the small-scale effects of the other great
 century, quantum mechanics. At the start of the 1970s, then, we were forced to turn our search for an
 understanding of the universe from our theory of the extraordinarily vast to our theory of the extraordinarily tiny.
 That theory, quantum mechanics, will be described next, before we turn to the efforts to combine the two partial
-theories into a single quantum theory of gravity.CHAPTER 4
+theories into a single quantum theory of gravity. chapter 4
 THE UNCERTAINTY PRINCIPLE
 The success of scientific theories, particularly Newton's theory of gravity, led the French scientist the Marquis de Laplace
 at the beginning of the nineteenth century to argue that the universe was completely deterministic. Laplace suggested
@@ -1086,7 +1086,7 @@ its downfall by suggesting that atoms should collapse to infinite density. We do
 that unifies general relativity and quantum mechanics, but we do know a number of the features it should have. The
 consequences that these would have for black holes and the big bang will be described in later chapters. For the
 moment, however, we shall turn to the recent attempts to bring together our understanding of the other forces of nature
-into a single, unified quantum theory.CHAPTER 5
+into a single, unified quantum theory. chapter 5
 ELEMENTARY PARTICLES AND THE FORCES OF NATURE
 Aristotle believed that all the matter in the universe was made up of four basic elements - earth, air, fire, and water.
 These elements were acted on by two forces: gravity, the tendency for earth and water to sink, and levity, the tendency
@@ -1389,7 +1389,7 @@ evolution of the universe. Even for objects the size of stars, the attractive fo
 and cause the star to collapse. My work in the 1970s focused on the black holes that can result from such stellar collapse
 and the intense gravitational fields around them. It was this that led to the first hints of how the theories of quantum
 mechanics and general relativity might affect each other - a glimpse of the shape of a quantum theory of gravity yet to
-come.CHAPTER 6
+come. chapter 6
 BLACK HOLES
 The term black hole is of very recent origin. It was coined in 1969 by the American scientist John Wheeler as a graphic
 description of an idea that goes back at least two hundred years, to a time when there were two theories about light:
@@ -1930,7 +1930,7 @@ singularities would occur in quantum gravity. From 1975 onward I therefore start
 approach to quantum gravity based on Richard Feynrnan's idea of a sum over histories. The answers that this
 approach suggests for the origin and fate of the universe and its contents, such as astronauts, will be de-scribed in the
 next two chapters. We shall see that although the uncertainty principle places limitations on the accuracy of all our
-predictions, it may at the same time remove the fundamental unpredictability that occurs at a space-time singularity.CHAPTER 8
+predictions, it may at the same time remove the fundamental unpredictability that occurs at a space-time singularity. chapter 8
 THE ORIGIN AND FATE OF THE UNIVERSE
 Einstein's general theory of relativity, on its own, predicted that space-time began at the big bang singularity and
 would come to an end either at the big crunch singularity (if the whole universe recollapsed), or at a singularity inside
@@ -2680,7 +2680,7 @@ you by convection and sweat. This will increase the disorder of the universe by 
 million million units - or about ten million million million times the increase in order in your brain - and that's if
 you remember everything in this book. In the next chapter but one I will try to increase the order in our neck of
 the woods a little further by explaining how people are trying to fit together the partial theories I have described
-to form a complete unified theory that would cover everything in the universe.CHAPTER 10
+to form a complete unified theory that would cover everything in the universe. chapter 10
 WORMHOLES AND TIME TRAVEL
 The last chapter discussed why we see time go forward: why disorder increases and why we remember the
 past but not the future. Time was treated as if it were a straight railway line on which one could only go one way
@@ -2904,7 +2904,7 @@ the energy density will become very large. This could give space-time a positive
 travel into the past. It is not yet clear whether these particles would cause positive or negative curvature or
 whether the curvature produced by some kinds of virtual particles might cancel that produced by other kinds.
 Thus the possibility of time travel remains open. But I'm not going to bet on it. My opponent might have the
-unfair advantage of knowing the future.CHAPTER 11
+unfair advantage of knowing the future. chapter 11
 THE UNIFICATION OF PHYSICS
 As was explained in the first chapter, it would be very difficult to construct a complete unified theory of
 everything in the universe all at one go. So instead we have made progress by finding partial theories that
@@ -3165,7 +3165,7 @@ predicting human behavior from mathematical equations! So even if we do find a c
 there will still be in the years ahead the intellectually challenging task of developing better approximation
 methods, so that we can make useful predictions of the probable outcomes in complicated and realistic
 situations. A complete, consistent, unified theory is only the first step: our goal is a complete understanding of
-the events around us, and of our own existence.CHAPTER 12
+the events around us, and of our own existence. chapter 12
 CONCLUSION
 We find ourselves in a bewildering world. We want to make sense of what we see around us and to ask: What
 is the nature of the universe? What is our place in it and where did it and we come from? Why is it the way it is?
