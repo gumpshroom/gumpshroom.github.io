@@ -23,6 +23,8 @@ async function response(req, res) {
                 res.setHeader("Content-Type", "text/javascript")
             } else if (req.url.substr(-4) === ".css") {
                 res.setHeader("Content-Type", "text/css")
+            } else if (req.url.substr(-4) === ".txt") {
+                res.setHeader("Content-Type", "text/plain")
             }
 
             res.writeHead(200);
