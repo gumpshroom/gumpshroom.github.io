@@ -3520,7 +3520,17 @@
 
     text = document.getElementById("briefhistory").innerText
     textarr = text.match(/["’]?[A-Z][^.?!]+((?![.?!][’"]?\s["’]?[A-Z][^.?!]).)+[.?!’"]+/gm)
-    console.log(textarr)
+    for(var x = 0; x < textarr.length; x++) {
+      console.log(textarr[x])
+      if(x < textarr.length - 1 && textarr[x].length + textarr[x+1].length < 200) {
+        console.log("conbimng")
+        textarr[x] = textarr[x] + " " + textarr[x+1]
+        textarr.splice(textarr.indexOf(textarr[x+1]), 1)
+        x--
+        console.log(textarr[x])
+      }
+    }
+    //console.log(textarr)
 
 
     function play() {
