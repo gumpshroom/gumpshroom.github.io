@@ -5,7 +5,9 @@ try {
   console.log('speak.js warning: no worker support');
 }
 
+
 function speak(text, args) {
+  console.log(text)
   var PROFILE = 1;
 
   function parseWav(wav) {
