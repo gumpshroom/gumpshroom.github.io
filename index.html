@@ -3,6 +3,26 @@
 <head>
 
   <script src="speakClient.js"></script>
+  <script>
+    var sentencenum = 0
+
+    var text, textarr
+
+    text = document.getElementById("briefhistory").innerText
+    textarr = text.match(/["’]?[A-Z][^.?!]+((?![.?!][’"]?\s["’]?[A-Z][^.?!]).)+[.?!’"]+/gm)
+    console.log(textarr)
+
+
+    function play() {
+
+      console.log(textarr[sentencenum])
+      speak(textarr[sentencenum], { amplitude: 100, wordgap: 0, pitch: 50, speed: 175 });
+
+      sentencenum++
+      setInterval(function(){speak(textarr[sentencenum], { amplitude: 100, wordgap: 0, pitch: 50, speed: 175 }); sentencenum++}, 8000)
+    }
+
+  </script>
 </head>
 <body>
   <h1>hawking.js</h1>
@@ -3512,26 +3532,7 @@
     as well as numerous scientific papers and books.
 
   </p>
-  <script>
-    var sentencenum = 0
 
-    var text, textarr
-
-    text = document.getElementById("briefhistory").innerText
-    textarr = text.match(/["’]?[A-Z][^.?!]+((?![.?!][’"]?\s["’]?[A-Z][^.?!]).)+[.?!’"]+/gm)
-    console.log(textarr)
-
-
-    function play() {
-
-      console.log(textarr[sentencenum])
-      speak(textarr[sentencenum], { amplitude: 100, wordgap: 0, pitch: 50, speed: 175 });
-
-      sentencenum++
-      setInterval(function(){speak(textarr[sentencenum], { amplitude: 100, wordgap: 0, pitch: 50, speed: 175 }); sentencenum++}, 8  000)
-    }
-
-  </script>
 </body>
 </html>
 

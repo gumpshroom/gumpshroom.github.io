@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fff8e4b8-fbff-49e8-a966-4713227f3510" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1618283412099</updated>
-      <workItem from="1618283413213" duration="5503000" />
+      <workItem from="1618283413213" duration="5809000" />
     </task>
     <task id="LOCAL-00001" summary="make thing">
       <created>1618288156933</created>
@@ -91,23 +91,41 @@
       <option name="project" value="LOCAL" />
       <updated>1618288822496</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="text">
+      <created>1618289000160</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1618289000160</updated>
+    </task>
+    <task id="LOCAL-00007" summary="no server">
+      <created>1618289161679</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1618289161679</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="make thing" />
     <MESSAGE value="readme" />
     <MESSAGE value="index" />
-    <option name="LAST_COMMIT_MESSAGE" value="index" />
+    <MESSAGE value="text" />
+    <MESSAGE value="no server" />
+    <option name="LAST_COMMIT_MESSAGE" value="no server" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1366" y="62" key="CommitChangelistDialog2" timestamp="1618288822404">
+    <state x="-1366" y="62" key="CommitChangelistDialog2" timestamp="1618289161558">
       <screen x="-1920" y="-36" width="1920" height="1055" />
     </state>
-    <state x="-1366" y="62" key="CommitChangelistDialog2/-1920.-36.1920.1055/0.25.1440.875@-1920.-36.1920.1055" timestamp="1618288822404" />
+    <state x="-1366" y="62" key="CommitChangelistDialog2/-1920.-36.1920.1055/0.25.1440.875@-1920.-36.1920.1055" timestamp="1618289161558" />
     <state width="1899" height="287" key="GridCell.Tab.0.bottom" timestamp="1618288644602">
       <screen x="-1920" y="-36" width="1920" height="1055" />
     </state>
@@ -124,9 +142,9 @@
       <screen x="-1920" y="-36" width="1920" height="1055" />
     </state>
     <state width="1899" height="287" key="GridCell.Tab.0.right/-1920.-36.1920.1055/0.25.1440.875@-1920.-36.1920.1055" timestamp="1618288644602" />
-    <state x="-1360" y="228" key="Vcs.Push.Dialog.v2" timestamp="1618288994473">
+    <state x="-1360" y="228" key="Vcs.Push.Dialog.v2" timestamp="1618289165628">
       <screen x="-1920" y="-36" width="1920" height="1055" />
     </state>
-    <state x="-1360" y="228" key="Vcs.Push.Dialog.v2/-1920.-36.1920.1055/0.25.1440.875@-1920.-36.1920.1055" timestamp="1618288994473" />
+    <state x="-1360" y="228" key="Vcs.Push.Dialog.v2/-1920.-36.1920.1055/0.25.1440.875@-1920.-36.1920.1055" timestamp="1618289165628" />
   </component>
 </project>
