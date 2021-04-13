@@ -1,0 +1,23 @@
+{
+  "name": "speak",
+  "version": "1.0.0",
+  "description": "stephen hawking tts",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kripken/speak.js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kripken/speak.js/issues"
+  },
+  "homepage": "https://github.com/kripken/speak.js#readme"
+}
