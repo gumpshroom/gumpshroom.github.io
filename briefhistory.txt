@@ -46,7 +46,7 @@ we think we know better? What do we know about the universe, and how do we know 
 universe come from, and where is it going? Did the universe have a beginning, and if so, what happened before
 then? What is the nature of time? Will it ever come to an end? Can we go back in time? Recent breakthroughs
 in physics, made possible in part by fantastic new technologies, suggest answers to some of these
-longstanding questions. Someday these answers may seem as obvious to us as the earth orbiting the sun – or
+longstanding questions. Someday these answers may seem as obvious to us as the earth orbiting the sun - or
 perhaps as ridiculous as a tower of tortoises. Only time (whatever that may be) will tell.
 As long ago as 340 BC the Greek philosopher Aristotle, in his book On the Heavens, was able to put forward
 two good arguments for believing that the earth was a round sphere rather than a Hat plate. First, he realized
@@ -83,8 +83,8 @@ room outside the sphere of fixed stars for heaven and hell.
 A simpler model, however, was proposed in 1514 by a Polish priest, Nicholas Copernicus. (At first, perhaps for
 fear of being branded a heretic by his church, Copernicus circulated his model anonymously.) His idea was that
 the sun was stationary at the center and that the earth and the planets moved in circular orbits around the sun.
-Nearly a century passed before this idea was taken seriously. Then two astronomers – the German, Johannes
-Kepler, and the Italian, Galileo Galilei – started publicly to support the Copernican theory, despite the fact that
+Nearly a century passed before this idea was taken seriously. Then two astronomers - the German, Johannes
+Kepler, and the Italian, Galileo Galilei - started publicly to support the Copernican theory, despite the fact that
 the orbits it predicted did not quite match the ones observed. The death blow to the Aristotelian/Ptolemaic
 theory came in 1609. In that year, Galileo started observing the night sky with a telescope, which had just been
 invented. When he looked at the planet Jupiter, Galileo found that it was accompanied by several small
@@ -136,7 +136,7 @@ and unchanging.
 Even those who realized that Newton's theory of gravity showed that the universe could not be static did not
 think to suggest that it might be expanding. Instead, they attempted to modify the theory by making the
 gravitational force repulsive at very large distances. This did not significantly affect their predictions of the
-motions of the planets, but it allowed an infinite distribution of stars to remain in equilibrium – with the attractive
+motions of the planets, but it allowed an infinite distribution of stars to remain in equilibrium - with the attractive
 forces between nearby stars balanced by the repulsive forces from those that were farther away. However, we
 now believe such an equilibrium would be unstable: if the stars in some region got only slightly nearer each
 other, the attractive forces between them would become stronger and dominate over the repulsive forces so
@@ -257,15 +257,15 @@ in the past. The classic example again is the Newtonian theory of gravity, which
 force between two bodies depends only on one number associated with each body, its mass, but is otherwise
 independent of what the bodies are made of. Thus one does not need to have a theory of the structure and
 constitution of the sun and the planets in order to calculate their orbits.
-Today scientists describe the universe in terms of two basic partial theories – the general theory of relativity
+Today scientists describe the universe in terms of two basic partial theories - the general theory of relativity
 and quantum mechanics. They are the great intellectual achievements of the first half of this century. The
 general theory of relativity describes the force of gravity and the large-scale structure of the universe, that is,
 the structure on scales from only a few miles to as large as a million million million million (1 with twenty-four
 zeros after it) miles, the size of the observable universe. Quantum mechanics, on the other hand, deals with
 phenomena on extremely small scales, such as a millionth of a millionth of an inch. Unfortunately, however,
-these two theories are known to be inconsistent with each other – they cannot both be correct. One of the
+these two theories are known to be inconsistent with each other - they cannot both be correct. One of the
 major endeavors in physics today, and the major theme of this book, is the search for a new theory that will
-incorporate them both – a quantum theory of gravity. We do not yet have such a theory, and we may still be a
+incorporate them both - a quantum theory of gravity. We do not yet have such a theory, and we may still be a
 long way from having one, but we do already know many of the properties that it must have. And we shall see,
 in later chapters, that we already know a fair amount about the predications a quantum theory of gravity must
 make.
@@ -384,7 +384,7 @@ the moons took longer to reach us when we were farther away. His measurements of
 distance of the earth from Jupiter were, however, not very accurate, and so his value for the speed of light was
 140,000 miles per second, compared to the modern value of 186,000 miles per second. Nevertheless,
 Roemer's achievement, in not only proving that light travels at a finite speed, but also in measuring that speed,
-was remarkable – coming as it did eleven years before Newton's publication of Principia Mathematica. A proper
+was remarkable - coming as it did eleven years before Newton's publication of Principia Mathematica. A proper
 theory of the propagation of light didn't come until 1865, when the British physicist James Clerk Maxwell
 succeeded in unifying the partial theories that up to then had been used to describe the forces of electricity and
 magnetism. Maxwell's equations predicted that there could be wavelike disturbances in the combined
@@ -438,7 +438,7 @@ space is not absolute). Since the speed of the light is just the distance it has
 taken, different observers would measure different speeds for the light. In relativity, on the other hand, all
 observers must agree on how fast light travels. They still, however, do not agree on the distance the light has
 traveled, so they must therefore now also disagree over the time it has taken. (The time taken is the distance
-the light has traveled – which the observers do not agree on – divided by the light's speed – which they do
+the light has traveled - which the observers do not agree on - divided by the light's speed - which they do
 agree on.) In other words, the theory of relativity put an end to the idea of absolute time! It appeared that each
 observer must have his own measure of time, as recorded by a clock carried with him, and that identical clocks
 carried by different observers would not necessarily agree.
@@ -456,7 +456,7 @@ observer will assign to an event, provided he knows the other observer's relativ
 Nowadays we use just this method to measure distances precisely, because we can measure time more
 accurately than length. In effect, the meter is defined to be the distance traveled by light in
 0.000000003335640952 second, as measured by a cesium clock. (The reason for that particular number is that
-it corresponds to the historical definition of the meter – in terms of two marks on a particular platinum bar kept
+it corresponds to the historical definition of the meter - in terms of two marks on a particular platinum bar kept
 in Paris.) Equally, we can use a more convenient, new unit of length called a light-second. This is simply
 defined as the distance that light travels in one second. In the theory of relativity, we now define distance in
 terms of time and the speed of light, so it follows automatically that every observer will measure light to have
@@ -604,7 +604,7 @@ affected by what happened in it. This was true even of the special theory of rel
 attracted and repelled, but time and space simply continued, unaffected. It was natural to think that space and
 time went on forever.
 The situation, however, is quite different in the general theory of relativity. Space and time are now dynamic
-quantities: when a body moves, or a force acts, it affects the curvature of space and time – and in turn the
+quantities: when a body moves, or a force acts, it affects the curvature of space and time - and in turn the
 structure of space-time affects the way in which bodies move and forces act. Space and time not only affect but
 also are affected by everything that happens in the universe. Just as one cannot talk about events in the
 universe without the notions of space and time, so in general relativity it became meaningless to talk about
@@ -643,7 +643,7 @@ apparent brightness and their distance, and so we can work out their luminosity.
 luminosity of stars in other galaxies, we could work out their distance by measuring their apparent brightness.
 Hubble noted that certain types of stars always have the same luminosity when they are near enough for us to
 measure; therefore, he argued, if we found such stars in another galaxy, we could assume that they had the
-same luminosity – and so calculate the distance to that galaxy. If we could do this for a number of stars in the
+same luminosity - and so calculate the distance to that galaxy. If we could do this for a number of stars in the
 same galaxy, and our calculations always gave the same distance, we could be fairly confident of our estimate.
 In this way, Edwin Hubble worked out the distances to nine different galaxies. We now know that our galaxy is
 only one of some hundred thousand million that can be seen using modern telescopes, each galaxy itself
@@ -655,13 +655,13 @@ average-sized, yellow star, near the inner edge of one of the spiral arms. We ha
 since Aristotle and Ptolemy, when thought that the earth was the center of the universe!
 Stars are so far away that they appear to us to be just pinpoints of light. We cannot see their size or shape. So
 how can we tell different types of stars apart? For the vast majority of stars, there is only one characteristic
-feature that we can observe – the color of their light. Newton discovered that if light from the sun passes
+feature that we can observe - the color of their light. Newton discovered that if light from the sun passes
 through a triangular-shaped piece of glass, called a prism, it breaks up into its component colors (its spectrum)
 as in a rainbow. By focusing a telescope on an individual star or galaxy, one can similarly observe the spectrum
 of the light from that star or galaxy. Different stars have different spectra, but the relative brightness of the
 different colors is always exactly what one would expect to find in the light emitted by an object that is glowing
 red hot. (In fact, the light emitted by any opaque object that is glowing red hot has a characteristic spectrum
-that depends only on its temperature – a thermal spectrum. This means that we can tell a star's temperature
+that depends only on its temperature - a thermal spectrum. This means that we can tell a star's temperature
 from the spectrum of its light.) Moreover, we find that certain very specific colors are missing from stars'
 spectra, and these missing colors may vary from star to star. Since we know that each chemical element
 absorbs a characteristic set of very specific colors, by matching these to those that are missing from a star's
@@ -726,7 +726,7 @@ we have seen, the other stars in our galaxy form a distinct band of light across
 Way. But if we look at distant galaxies, there seems to be more or less the same number of them. So the
 universe does seem to be roughly the same in every direction, provided one views it on a large scale compared
 to the distance between galaxies, and ignores the differences on small scales. For a long time, this was
-sufficient justification for Friedmann's assumption – as a rough approximation to the real universe. But more
+sufficient justification for Friedmann's assumption - as a rough approximation to the real universe. But more
 recently a lucky accident uncovered the fact that Friedmann's assumption is in fact a remarkably accurate
 description of our universe.
 In 1965 two American physicists at the Bell Telephone Laboratories in New Jersey, Arno Penzias and Robert
@@ -801,7 +801,7 @@ or boundaries.
 The idea that one could go right round the universe and end up where one started makes good science fiction,
 but it doesn't have much practical significance, because it can be shown that the universe would recollapse to
 zero size before one could get round. You would need to travel faster than light in order to end up where you
-started before the universe came to an end – and that is not allowed!
+started before the universe came to an end - and that is not allowed!
 In the first kind of Friedmann model, which expands and recollapses, space is bent in on itself, like the surface
 of the earth. It is therefore finite in extent. In the second kind of model, which expands forever, space is bent
 the other way, like the surface of a saddle. So in this case space is infinite. Finally, in the third kind of
@@ -876,8 +876,8 @@ time, was made by two Russian scientists, Evgenii Lifshitz and Isaac Khalatnikov
 the big bang might be a peculiarity of Friedmann's models alone, which after all were only approximations to
 the real universe. Perhaps, of all the models that were roughly like the real universe, only Friedmann's would
 contain a big bang singularity. In Friedmann's models, the galaxies are all moving directly away from each
-other – so it is not surprising that at some time in the past they were all at the same place. In the real universe,
-however, the galaxies are not just moving directly away from each other – they also have small sideways
+other - so it is not surprising that at some time in the past they were all at the same place. In the real universe,
+however, the galaxies are not just moving directly away from each other - they also have small sideways
 velocities. So in reality they need never have been all at exactly the same place, only very close together.
 Perhaps then the current expanding universe resulted not from a big bang singularity, but from an earlier
 contracting phase; as the universe had collapsed the particles in it might not have all collided, but had flown
@@ -905,7 +905,7 @@ the entire universe had a big bang singularity in its past. However, at the time
 theorem, I was a research student desperately looking for a problem with which to complete my Ph.D. thesis.
 Two years before, I had been diagnosed as suffering from ALS, commonly known as Lou Gehrig's disease, or
 motor neuron disease, and given to understand that I had only one or two more years to live. In these
-circumstances there had not seemed much point in working on my Ph.D.– I did not expect to survive that long.
+circumstances there had not seemed much point in working on my Ph.D.- I did not expect to survive that long.
 Yet two years had gone by and I was not that much worse. In fact, things were going rather well for me and I
 had gotten engaged to a very nice girl, Jane Wilde. But in order to get married, I needed a job, and in order to
 get a job, I needed a Ph.D.
@@ -926,7 +926,7 @@ partly from people who felt that the whole idea of singularities was repugnant a
 Einstein's theory. However, one cannot really argue with a mathematical theorem. So in the end our work
 became generally accepted and nowadays nearly everyone assumes that the universe started with a big bang
 singularity. It is perhaps ironic that, having changed my mind, I am now trying to convince other physicists that
-there was in fact no singularity at the beginning of the universe – as we shall see later, it can disappear once
+there was in fact no singularity at the beginning of the universe - as we shall see later, it can disappear once
 quantum effects are taken into account.
 We have seen in this chapter how, in less than half a century, man's view of the universe formed over millennia
 has been transformed. Hubble's discovery that the universe was expanding, and the realization of the
@@ -1035,7 +1035,7 @@ seems the more peculiar because if one only has one slit, one does not get any f
 electrons across the screen. One might therefore think that opening another slit would just increase the number of
 electrons hitting each point of the screen, but, because of interference, it actually decreases it in some places. If
 electrons are sent through the slits one at a time, one would expect each to pass through one slit or the other, and so
-behave just as if the slit it passed through were the only one there – giving a uniform distribution on the screen. In reality,
+behave just as if the slit it passed through were the only one there - giving a uniform distribution on the screen. In reality,
 however, even when the electrons are sent one at a time, the fringes still appear. Each electron, therefore, must be
 passing through both slits at the same time!
 The phenomenon of interference between particles has been crucial to our understanding of the structure of atoms, the
@@ -1088,7 +1088,7 @@ consequences that these would have for black holes and the big bang will be desc
 moment, however, we shall turn to the recent attempts to bring together our understanding of the other forces of nature
 into a single, unified quantum theory.CHAPTER 5
 ELEMENTARY PARTICLES AND THE FORCES OF NATURE
-Aristotle believed that all the matter in the universe was made up of four basic elements – earth, air, fire, and water.
+Aristotle believed that all the matter in the universe was made up of four basic elements - earth, air, fire, and water.
 These elements were acted on by two forces: gravity, the tendency for earth and water to sink, and levity, the tendency
 for air and fire to rise. This division of the contents of the universe into matter and forces is still used today. Aristotle
 believed that matter was continuous, that is, one could divide a piece of matter into smaller and smaller bits without any
@@ -1100,7 +1100,7 @@ compounds always combined in certain proportions could be explained by the group
 called molecules. However, the argument between the two schools of thought was not finally settled in favor of the
 atomists until the early years of this century. One of the important pieces of physical evidence was provided by Einstein.
 In a paper written in 1905, a few weeks before the famous paper on special relativity, Einstein pointed out that what was
-called Brownian motion – the irregular, random motion of small particles of dust suspended in a liquid – could be
+called Brownian motion - the irregular, random motion of small particles of dust suspended in a liquid - could be
 explained as the effect of atoms of the liquid colliding with the dust particles.
 By this time there were already suspicions that these atoms were not, after all, indivisible. Several years previously a
 fellow of Trinity College, Cambridge, J. J. Thomson, had demonstrated the existence of a particle of matter, called the
@@ -1121,7 +1121,7 @@ Caius College, Cambridge (the college of which I am now a fellow). He later resi
 disagreements with the Fellows. There had been a bitter dispute in the college ever since a group of young Fellows
 returning after the war had voted many of the old Fellows out of the college offices they had held for a long time. This
 was before my time; I joined the college in 1965 at the tail end of the bitterness, when similar disagreements forced
-another Nobel Prize – winning Master, Sir Nevill Mott, to resign.
+another Nobel Prize - winning Master, Sir Nevill Mott, to resign.
 Up to about thirty years ago, it was thought that protons and neutrons were "elementary" particles, but experiments in
 which protons were collided with other protons or electrons at high speeds indicated that they were in fact made up of
 smaller particles. These particles were named quarks by the Caltech physicist Murray Gell-Mann, who won the Nobel
@@ -1133,7 +1133,7 @@ bottom, and top. The first three flavors had been known since the 1960s but the 
 1974, the bottom in 1977, and the top in 1995. Each flavor comes in three "colors," red, green, and blue. (It should be
 emphasized that these terms are just labels: quarks are much smaller than the wavelength of visible light and so do not
 have any color in the normal sense. It is just that modern physicists seem to have more imaginative ways of naming new
-particles and phenomena – they no longer restrict themselves to Greek!) A proton or neutron is made up of three quarks,
+particles and phenomena - they no longer restrict themselves to Greek!) A proton or neutron is made up of three quarks,
 one of each color. A proton contains two up quarks and one down quark; a neutron contains two down and one up. We
 can create particles made up of the other quarks (strange, charmed, bottom, and top), but these all have a much greater
 mass and decay very rapidly into protons and neutrons.
@@ -1168,7 +1168,7 @@ have to turn them through two complete revolutions! Such particles are said to h
 All the known particles in the universe can be divided into two groups: particles of spin ½, which make up the matter in
 the universe, and particles of spin 0, 1, and 2, which, as we shall see, give rise to forces between the matter particles.
 The matter particles obey what is called Pauli's exclusion principle. This was discovered in 1925 by an Austrian physicist,
-Wolfgang Pauli – for which he received the Nobel Prize in 1945. He was the archetypal theoretical physicist: it was said
+Wolfgang Pauli - for which he received the Nobel Prize in 1945. He was the archetypal theoretical physicist: it was said
 of him that even his presence in the same town would make experiments go wrong! Pauli's exclusion principle says that
 two similar particles can-not exist in the same state; that is, they cannot have both the same position and the same
 velocity, within the limits given by the uncertainty principle. The exclusion principle is crucial because it explains why
@@ -1190,7 +1190,7 @@ made out of antiparticles. However, if you meet your antiself, don't shake hands
 of light. The question of why there seem to be so many more particles than antiparticles around us is extremely
 important, and I shall return to it later in the chapter.
 In quantum mechanics, the forces or interactions between matter particles are all supposed to be carried by particles of
-integer spin – 0, 1, or 2. What happens is that a matter particle, such as an electron or a quark, emits a force-carrying
+integer spin - 0, 1, or 2. What happens is that a matter particle, such as an electron or a quark, emits a force-carrying
 particle. The recoil from this emission changes the velocity of the matter particle. The force-carrying particle then collides
 with another matter particle and is absorbed. This collision changes the velocity of the second particle, just as if there had
 been a force between the two matter particles. It is an important property of ' the force-carrying particles that they do not
@@ -1211,7 +1211,7 @@ particles with which they interact. It should be emphasized that this division i
 convenient for the construction of partial theories, but it may not correspond to anything deeper. Ultimately, most
 physicists hope to find a unified theory that will explain all four forces as different aspects of a single force. Indeed, many
 would say this is the prime goal of physics today. Recently, successful attempts have been made to unify three of the
-four categories of force – and I shall describe these in this chapter. The question of the unification of the remaining
+four categories of force - and I shall describe these in this chapter. The question of the unification of the remaining
 category, gravity, we shall leave till later.
 The first category is the gravitational force. This force is universal, that is, every particle feels the force of gravity,
 according to its mass or energy. Gravity is the weakest of the four forces by a long way; it is so weak that we would not
@@ -1222,8 +1222,8 @@ attractive and some-times repulsive, so they tend to cancel out. In the quantum 
 gravitational field, the force between two matter particles is pictured as being carried by a particle of spin 2 called the
 graviton. This has no mass of its own, so the force that it carries is long range. The gravitational force between the sun
 and the earth is ascribed to the exchange of gravitons between the particles that make up these two bodies. Although the
-exchanged particles are virtual, they certainly do produce a measurable effect – they make the earth orbit the sun! Real
-gravitons make up what classical physicists would call gravitational waves, which are very weak – and so difficult to
+exchanged particles are virtual, they certainly do produce a measurable effect - they make the earth orbit the sun! Real
+gravitons make up what classical physicists would call gravitational waves, which are very weak - and so difficult to
 detect that they have not yet been observed.
 The next category is the electromagnetic force, which interacts with electrically charged particles like electrons and
 quarks, but not with uncharged particles such as gravitons. It is much stronger than the gravitational force: the
@@ -1238,7 +1238,7 @@ and positively charged protons in the nucleus causes the electrons to orbit the 
 attraction causes the earth to orbit the sun. The electromagnetic attraction is pictured as being caused by the exchange
 of large numbers of virtual massless particles of spin 1, called photons. Again, the photons that are exchanged are virtual
 particles. However, when an electron changes from one allowed orbit to another one nearer to the nucleus, energy is
-released and a real photon is emitted – which can be observed as visible light by the human eye, if it has the right
+released and a real photon is emitted - which can be observed as visible light by the human eye, if it has the right
 wave-length, or by a photon detector such as photographic film. Equally, if a real photon collides with an atom, it may
 move an electron from an orbit nearer the nucleus to one farther away. This uses up the energy of the photon, so it is
 absorbed.
@@ -1253,7 +1253,7 @@ stands for gigaelectron-volt, or one thousand million electron volts). The Weinb
 known as spontaneous symmetry breaking. This means that what appear to be a number of completely different particles
 at low energies are in fact found to be all the same type of particle, only in different states. At high energies all these
 particles behave similarly. The effect is rather like the behavior of a roulette ball on a roulette wheel. At high energies
-(when the wheel is spun quickly) the ball behaves in essentially only one way – it rolls round and round. But as the wheel
+(when the wheel is spun quickly) the ball behaves in essentially only one way - it rolls round and round. But as the wheel
 slows, the energy of the ball decreases, and eventually the ball drops into one of the thirty-seven slots in the wheel. In
 other words, at low energies there are thirty-seven different states in which the ball can exist. If, for some reason, we
 could only observe the ball at low energies, we would then think that there were thirty-seven different types of ball!
@@ -1301,7 +1301,7 @@ quarks and electrons, would also all be essentially the same, thus achieving ano
 The value of the grand unification energy is not very well known, but it would probably have to be at least a thousand
 million million GeV. The present generation of particle accelerators can collide particles at energies of about one hundred
 GeV, and machines are planned that would raise this to a few thousand GeV. But a machine that was powerful enough to
-accelerate particles to the grand unification energy would have to be as big as the Solar System – and would be unlikely
+accelerate particles to the grand unification energy would have to be as big as the Solar System - and would be unlikely
 to be funded in the present economic climate. Thus it is impossible to test grand unified theories directly in the laboratory.
 However, just as in the case of the electromagnetic and weak unified theory, there are low-energy consequences of the
 theory that can be tested.
@@ -1370,9 +1370,9 @@ There is a mathematical theorem that says that any theory that obeys quantum mec
 obey the combined symmetry CPT. In other words, the universe would have to behave the same if one replaced particles
 by antiparticles, took the mirror image, and also reversed the direction of time. But Cronin and Fitch showed that if one
 replaces particles by antiparticles and takes the mirror image, but does not reverse the direction of time, then the
-universe does not behave the same. The laws of physics, therefore, must change if one reverses the direction of time –
+universe does not behave the same. The laws of physics, therefore, must change if one reverses the direction of time -
 they do not obey the symmetry T.
-Certainly the early universe does not obey the symmetry T: as time runs forward the universe expands – if it ran
+Certainly the early universe does not obey the symmetry T: as time runs forward the universe expands - if it ran
 backward, the universe would be contracting. And since there are forces that do not obey the symmetry T, it follows that
 as the universe expands, these forces could cause more antielectrons to turn into quarks than electrons into antiquarks.
 Then, as the universe expanded and cooled, the antiquarks would annihilate with the quarks, but since there would be
@@ -1388,7 +1388,7 @@ matter particles, gravitational forces can dominate over all other forces. This 
 evolution of the universe. Even for objects the size of stars, the attractive force of gravity can win over all the other forces
 and cause the star to collapse. My work in the 1970s focused on the black holes that can result from such stellar collapse
 and the intense gravitational fields around them. It was this that led to the first hints of how the theories of quantum
-mechanics and general relativity might affect each other – a glimpse of the shape of a quantum theory of gravity yet to
+mechanics and general relativity might affect each other - a glimpse of the shape of a quantum theory of gravity yet to
 come.CHAPTER 6
 BLACK HOLES
 The term black hole is of very recent origin. It was coined in 1969 by the American scientist John Wheeler as a graphic
@@ -1419,11 +1419,11 @@ consistent theory of how gravity affects light did not come along until Einstein
 even then it was a long time before the implications of the theory for massive stars were understood.
 To understand how a black hole might be formed, we first need an understanding of the life cycle of a star. A star is
 formed when a large amount of gas (mostly hydrogen) starts to collapse in on itself due to its gravitational attraction. As
-it contracts, the atoms of the gas collide with each other more and more frequently and at greater and greater speeds –
+it contracts, the atoms of the gas collide with each other more and more frequently and at greater and greater speeds -
 the gas heats up. Eventually, the gas will be so hot that when the hydrogen atoms collide they no longer bounce off
 each other, but instead coalesce to form helium. The heat released in this reaction, which is like a controlled hydrogen
 bomb explosion, is what makes the star shine. This additional heat also increases the pressure of the gas until it is
-sufficient to balance the gravitational attraction, and the gas stops contracting. It is a bit like a balloon – there is a
+sufficient to balance the gravitational attraction, and the gas stops contracting. It is a bit like a balloon - there is a
 balance between the pressure of the air inside, which is trying to make the balloon expand, and the tension in the
 rubber, which is trying to make the balloon smaller. Stars will remain stable like this for a long time, with heat from the
 nuclear reactions balancing the gravitational attraction. Eventually, however, the star will run out of its hydrogen and
@@ -1561,7 +1561,7 @@ carried away by the emission of gravitational waves. (It is rather like dropping
 down a great deal, but as the ripples carry away its energy, it eventually settles down to a stationary state.) For
 example, the movement of the earth in its orbit round the sun produces gravitational waves. The effect of the energy
 loss will be to change the orbit of the earth so that gradually it gets nearer and nearer to the sun, eventually collides with
-it, and settles down to a stationary state. The rate of energy loss in the case of the earth and the sun is very low – about
+it, and settles down to a stationary state. The rate of energy loss in the case of the earth and the sun is very low - about
 enough to run a small electric heater. This means it will take about a thousand million million million million years for the
 earth to run into the sun, so there's no immediate cause for worry! The change in the orbit of the earth is too slow to be
 observed, but this same effect has been observed over the past few years occurring in the system called PSR 1913 +
@@ -1573,7 +1573,7 @@ orbiting so fast that they will emit enough gravitational waves for detectors li
 During the gravitational collapse of a star to form a black hole, the movements would be much more rapid, so the rate at
 which energy is carried away would be much higher. It would therefore not be too long ' before it settled down to a
 stationary state. What would this final stage look like? One might suppose that it would depend on all the complex
-features of the star from which it had formed – not only its mass and rate of rotation, but also the different densities of
+features of the star from which it had formed - not only its mass and rate of rotation, but also the different densities of
 various parts of the star, and the complicated movements of the gases within the star. And if black holes were as varied
 as the objects that collapsed to form them, it might be very difficult to make any predictions about black holes in
 general.
@@ -1583,8 +1583,8 @@ relativity, non-rotating black holes must be very simple; they were perfectly sp
 mass, and any two such black holes with the same mass were identical. They could, in fact, be described by a
 particular solution of Einstein's equations that had been known since 1917, found by Karl Schwarzschild shortly after
 the discovery of general relativity. At first many people, including Israel himself, argued that since black holes had to be
-perfectly spherical, a black hole could only form from the collapse of a perfectly spherical object. Any real star – which
-would never be perfectly spherical – could therefore only collapse to form a naked singularity.
+perfectly spherical, a black hole could only form from the collapse of a perfectly spherical object. Any real star - which
+would never be perfectly spherical - could therefore only collapse to form a naked singularity.
 There was, however, a different interpretation of Israel's result, which was advocated by Roger Penrose and John
 Wheeler in particular. They argued that the rapid movements involved in a star's collapse would mean that the
 gravitational waves it gave off would make it ever more spherical, and by the time it had settled down to a stationary
@@ -1629,7 +1629,7 @@ Further encouragement for the existence of black holes came in 1967 with the dis
 Cambridge, Jocelyn Bell-Burnell, of objects in the sky that were emitting regular pulses of radio waves. At first Bell and
 her supervisor, Antony Hewish, thought they might have made contact with an alien civilization in the galaxy! Indeed, at
 the seminar at which they announced their discovery, I remember that they called the first four sources to be found
-LGM 1 – 4, LGM standing for "Little Green Men." In the end, however, they and everyone else came to the less
+LGM 1 - 4, LGM standing for "Little Green Men." In the end, however, they and everyone else came to the less
 romantic conclusion that these objects, which were given the name pulsars, were in fact rotating neutron stars that were
 emitting pulses of radio waves because of a complicated interaction between their magnetic fields and surrounding
 matter. This was bad news for writers of space westerns, but very hopeful for the small number of us who believed in
@@ -1713,10 +1713,10 @@ hole, hovering forever just on the edge Figure 7:1. It is a bit like running awa
 keep one step ahead but not being able to get clear away!
 Suddenly I realized that the paths of these light rays could never approach one another. If they did they must
 eventually run into one another. It would be like meeting someone else running away from the police in the opposite
-direction – you would both be caught! (Or, in this case, fall into a black hole.) But if these light rays were swallowed up
+direction - you would both be caught! (Or, in this case, fall into a black hole.) But if these light rays were swallowed up
 by the black hole, then they could not have been on the boundary of the black hole. So the paths of light rays in the
 event horizon had always to be moving parallel to, or away from, each other. Another way of seeing this is that the
-event horizon, the boundary of the black hole, is like the edge of a shadow – the shadow of impending doom. If you
+event horizon, the boundary of the black hole, is like the edge of a shadow - the shadow of impending doom. If you
 look at the shadow cast by a source at a great distance, such as the sun, you will see that the rays of light in the edge
 are not approaching each other.
 If the rays of light that form the event horizon, the boundary of the black hole, can never approach each other, the area
@@ -1855,7 +1855,7 @@ difficult, however: the black hole would have the mass of a mountain compressed 
 inch, the size of the nucleus of an atom! If you had one of these black holes on the surface of the earth, there would be
 no way to stop it from falling through the floor to the center of the earth. It would oscillate through the earth and back,
 until eventually it settled down at the center. So the only place to put such a black hole, in which one might use the
-energy that it emitted, would be in orbit around the earth – and the only way that one could get it to orbit the earth
+energy that it emitted, would be in orbit around the earth - and the only way that one could get it to orbit the earth
 would be to attract it there by towing a large mass in front of it, rather like a carrot in front of a donkey. This does not
 sound like a very practical proposition, at least not in the immediate future.
 But even if we cannot harness the emission from these primordial black holes, what are our chances of observing
@@ -1949,7 +1949,7 @@ question of science, declaring that the sun went round the earth. Now, centuries
 number of experts to advise it on cosmology. At the end of the conference the participants were granted an audience
 with the Pope. He told us that it was all right to study the evolution of the universe after the big bang, but we should
 not inquire into the big bang itself because that was the moment of Creation and therefore the work of God. I was
-glad then that he did not know the subject of the talk I had just given at the conference – the possibility that
+glad then that he did not know the subject of the talk I had just given at the conference - the possibility that
 space-time was finite but had no boundary, which means that it had no beginning, no moment of Creation. I had no
 desire to share the fate of Galileo, with whom I feel a strong sense of identity, partly because of the coincidence of
 having been born exactly 300 years after his death!
@@ -1958,14 +1958,14 @@ and fate of the universe, it is necessary first to understand the generally acce
 to what is known as the "hot big bang model." This assumes that the universe is described by a Friedmann model,
 right back to the big bang. In such models one finds that as the universe expands, any matter or radiation in it gets
 cooler. (When the universe doubles in size, its temperature falls by half.) Since temperature is simply a measure of
-the average energy – or speed – of the particles, this cooling of the universe would have a major effect on the matter
+the average energy - or speed - of the particles, this cooling of the universe would have a major effect on the matter
 in it. At very high temperatures, particles would be moving around so fast that they could escape any attraction
 toward each other due to nuclear or electromagnetic forces, but as they cooled off one would expect particles that
 attract each other to start to clump together. Moreover, even the types of particles that exist in the universe would
 depend on the temperature. At high enough temperatures, particles have so much energy that whenever they collide
-many different particle/antiparticle pairs would be produced – and although some of these particles would annihilate
+many different particle/antiparticle pairs would be produced - and although some of these particles would annihilate
 on hitting antiparticles, they would be produced more rap-idly than they could annihilate. At lower temperatures,
-however, when colliding particles have less energy, particle/antiparticle pairs would be produced less quickly – and
+however, when colliding particles have less energy, particle/antiparticle pairs would be produced less quickly - and
 annihilation would become faster than production.
 At the big bang itself the universe is thought to have had zero size, and so to have been infinitely hot. But as the
 universe expanded, the temperature of the radiation decreased. One second after the big bang, it would have fallen
@@ -1993,12 +1993,12 @@ in the hot big bang model about a quarter of the protons and neutrons would have
 along with a small amount of heavy hydrogen and other elements. The remaining neutrons would have decayed into
 protons, which are the nuclei of ordinary hydrogen atoms.
 This picture of a hot early stage of the universe was first put forward by the scientist George Gamow in a famous
-paper written in 1948 with a student of his, Ralph Alpher. Gamow had quite a sense of humor – he persuaded the
+paper written in 1948 with a student of his, Ralph Alpher. Gamow had quite a sense of humor - he persuaded the
 nuclear scientist Hans Bethe to add his name to the paper to make the list of authors "Alpher, Bethe, Gamow," like
 the first three letters of the Greek alphabet, alpha, beta, gamma: particularly appropriate for a paper on the beginning
 of the universe! In this paper they made the remarkable prediction that radiation (in the form of photons) from the
 very hot early stages of the universe should still be around today, but with its temperature reduced to only a few
-degrees above absolute zero (–273ºC). It was this radiation that Penzias and Wilson found in 1965. At the time that
+degrees above absolute zero (-273ºC). It was this radiation that Penzias and Wilson found in 1965. At the time that
 Alpher, Bethe, and Gamow wrote their paper, not much was known about the nuclear reactions of protons and
 neutrons. Predictions made for the proportions of various elements in the early universe were therefore rather
 inaccurate, but these calculations have been repeated in the light of better knowledge and now agree very well with
@@ -2013,7 +2013,7 @@ combining to form atoms. The universe as a whole would have continued expanding 
 were slightly denser than average, the expansion would have been slowed down by the extra gravitational attraction.
 This would eventually stop expansion in some regions and cause them to start to recollapse. As they were
 collapsing, the gravitational pull of matter outside these regions might start them rotating slightly. As the collapsing
-region got smaller, it would spin faster – just as skaters spinning on ice spin faster as they draw in their arms.
+region got smaller, it would spin faster - just as skaters spinning on ice spin faster as they draw in their arms.
 Eventually, when the region got small enough, it would be spinning fast enough to balance the attraction of gravity,
 and in this way disklike rotating galaxies were born. Other regions, which did not happen to pick up a rotation, would
 become oval-shaped objects called elliptical galaxies. In these, the region would stop collapsing because individual
@@ -2075,7 +2075,7 @@ The general theory of relativity, on its own, cannot explain these features or a
 prediction that the universe started off with infinite density at the big bang singularity. At the singularity, general
 relativity and all other physical laws would break down: one couldn't predict what would come out of the singularity.
 As explained before, this means that one might as well cut the big bang, and any events before it, out of the theory,
-because they can have no effect on what we observe. Space-time would have a boundary – a beginning at the big
+because they can have no effect on what we observe. Space-time would have a boundary - a beginning at the big
 bang.
 Science seems to have uncovered a set of laws that, within the limits set by the uncertainty principle, tell us how the
 universe will develop with time, if we know its state at any one time. These laws may have originally been decreed by
@@ -2104,7 +2104,7 @@ density fluctuations in such a model to have led to the formation of many more p
 limit that has been set by observations of the gamma ray background.
 If the universe is indeed spatially infinite, or if there are infinitely many universes, there would probably be some large
 regions somewhere that started out in a smooth and uniform manner. It is a bit like the well-known horde of monkeys
-hammering away on typewriters – most of what they write will be garbage, but very occasionally by pure chance they
+hammering away on typewriters - most of what they write will be garbage, but very occasionally by pure chance they
 will type out one of Shakespeare's sonnets. Similarly, in the case of the universe, could it be that we are living in a
 region that just happens by chance to be smooth and uniform? At first sight this might seem very improbable,
 because such smooth regions would be heavily outnumbered by chaotic and irregular regions. However, suppose
@@ -2118,7 +2118,7 @@ life will be met only in certain regions that are limited in space and time. The
 should therefore not be surprised if they observe that their locality in the universe satisfies the conditions that are
 necessary for their existence. It is a bit like a rich person living in a wealthy neighborhood not seeing any poverty.
 One example of the use of the weak anthropic principle is to "explain" why the big bang occurred about ten thousand
-million years ago – it takes about that long for intelligent beings to evolve. As explained above, an early generation of
+million years ago - it takes about that long for intelligent beings to evolve. As explained above, an early generation of
 stars first had to form. These stars converted some of the original hydrogen and helium into elements like carbon and
 oxygen, out of which we are made. The stars then exploded as supernovas, and their debris went to form other stars
 and planets, among them those of our Solar System, which is about five thousand million years old. The first one or
@@ -2133,7 +2133,7 @@ organisms; only in the few universes that are like ours would intelligent beings
 the universe the way we see it?" The answer is then simple: if it had been different, we would not be here!
 The laws of science, as we know them at present, contain many fundamental numbers, like the size of the electric
 charge of the electron and the ratio of the masses of the proton and the electron. We cannot, at the moment at least,
-predict the values of these numbers from theory – we have to find them by observation. It may be that one day we
+predict the values of these numbers from theory - we have to find them by observation. It may be that one day we
 shall discover a complete unified theory that predicts them all, but it is also possible that some or all of them vary
 from universe to universe or within a single universe. The remarkable fact is that the values of these numbers seem
 to have been very finely adjusted to make possible the development of life. For example, if the electric charge of the
@@ -2328,13 +2328,13 @@ problems. The only way around these is the following peculiar prescription: one 
 histories that are not in the "real" time that you and I experience but take place in what is called imaginary time.
 Imaginary time may sound like science fiction but it is in fact a well-defined mathematical concept. If we take any
 ordinary (or "real") number and multiply it by itself, the result is a positive number. (For example, 2 times 2 is 4, but
-so is – 2 times – 2.) There are, however, special numbers (called imaginary numbers) that give negative numbers
-when multiplied by themselves. (The one called i, when multiplied by itself, gives – 1, 2i multiplied by itself gives – 4,
+so is - 2 times - 2.) There are, however, special numbers (called imaginary numbers) that give negative numbers
+when multiplied by themselves. (The one called i, when multiplied by itself, gives - 1, 2i multiplied by itself gives - 4,
 and so on.)
 One can picture real and imaginary numbers in the following way: The real numbers can be represented by a line
-going from left to right, with zero in the middle, negative numbers like – 1, – 2, etc. on the left, and positive numbers,
+going from left to right, with zero in the middle, negative numbers like - 1, - 2, etc. on the left, and positive numbers,
 1, 2, etc. on the right. Then imaginary numbers are represented by a line going up and down the page, with i, 2i, etc.
-above the middle, and – i, – 2i, etc. below. Thus imaginary numbers are in a sense numbers at right angles to
+above the middle, and - i, - 2i, etc. below. Thus imaginary numbers are in a sense numbers at right angles to
 ordinary real numbers.
 To avoid the technical difficulties with Feynman's sum over histories, one must use imaginary time. That is to say, for
 the purposes of the calculation one must measure time using imaginary numbers, rather than real ones. This has an
@@ -2343,7 +2343,7 @@ which events have imaginary values of the time coordinate is said to be Euclidea
 who founded the study of the geometry of two-dimensional surfaces. What we now call Euclidean space-time is very
 similar except that it has four dimensions instead of two. In Euclidean space-time there is no difference between the
 time direction and directions in space. On the other hand, in real space-time, in which events are labeled by ordinary,
-real values of the time coordinate, it is easy to tell the difference – the time direction at all points lies within the light
+real values of the time coordinate, it is easy to tell the difference - the time direction at all points lies within the light
 cone, and space directions lie outside. In any case, as far as everyday quantum mechanics is concerned, we may
 regard our use of imaginary time and Euclidean space-time as merely a mathematical device (or trick) to calculate
 answers about real space-time.
@@ -2393,7 +2393,7 @@ difficult to determine in the case of quantum gravity, for two reasons. First, a
 not yet sure exactly which theory successfully combines general relativity and quantum mechanics, though we know
 quite a lot about the form such a theory must have. Second, any model that described the whole universe in detail
 would be much too complicated mathematically for us to be able to calculate exact predictions. One therefore has to
-make simplifying assumptions and approximations – and even then, the problem of extracting predictions remains a
+make simplifying assumptions and approximations - and even then, the problem of extracting predictions remains a
 formidable one.
 Each history in the sum over histories will describe not only the space-time but everything in it as well, including any
 complicated organisms like human beings who can observe the history of the universe. This may provide another
@@ -2466,7 +2466,7 @@ The idea that space and time may form a closed surface without boundary also has
 of God in the affairs of the universe. With the success of scientific theories in describing events, most people have
 come to believe that God allows the universe to evolve according to a set of laws and does not intervene in the
 universe to break these laws. However, the laws do not tell us what the universe should have looked like when it
-started – it would still be up to God to wind up the clockwork and choose how to start it off. So long as the universe
+started - it would still be up to God to wind up the clockwork and choose how to start it off. So long as the universe
 had a beginning, we could suppose it had a creator. But if the universe is really completely self-contained, having no
 boundary or edge, it would have neither beginning nor end: it would simply be. What place, then, for a creator?CHAPTER 9
 THE ARROW OF TIME
@@ -2474,7 +2474,7 @@ In previous chapters we have seen how our views of the nature of time have chang
 beginning of this century people believed in an absolute time. That is, each event could be labeled by a number
 called "time" in a unique way, and all good clocks would agree on the time interval between two events.
 However, the discovery that the speed of light appeared the same to every observer, no matter how he was
-moving, led to the theory of relativity – and in that one had to abandon the idea that there was a unique
+moving, led to the theory of relativity - and in that one had to abandon the idea that there was a unique
 absolute time. Instead, each observer would have his own measure of time as recorded by a clock that he
 carried: clocks carried by different observers would not necessarily agree. Thus time became a more personal
 concept, relative to the observer who measured it.
@@ -2513,7 +2513,7 @@ increases. Then, there is the psychological arrow of time. This is the direction
 direction in which we remember the past but not the future. Finally, there is the cosmological arrow of time. This
 is the direction of time in which the universe is expanding rather than contracting.
 In this chapter I shall argue that the no boundary condition for the universe, together with the weak anthropic
-principle, can explain why all three arrows point in the same direction – and moreover, why a well-defined arrow
+principle, can explain why all three arrows point in the same direction - and moreover, why a well-defined arrow
 of time should exist at all. I shall argue that the psychological arrow is determined by the thermodynamic arrow,
 and that these two arrows necessarily always point in the same direction. If one assumes the no boundary
 condition for the universe, we shall see that there must be well-defined thermodynamic and cosmological
@@ -2635,7 +2635,7 @@ boundary condition implied that disorder would in fact continue to increase duri
 thermodynamic and psychological arrows of time would not reverse when the universe begins to recontract, or
 inside black holes.
 What should you do when you find you have made a mistake like that? Some people never admit that they are
-wrong and continue to find new, and often mutually inconsistent, arguments to support their case – as
+wrong and continue to find new, and often mutually inconsistent, arguments to support their case - as
 Eddington did in opposing black hole theory. Others claim to have never really supported the incorrect view in
 the first place or, if they did, it was only to show that it was inconsistent. It seems to me much better and less
 confusing if you admit in print that you were wrong. A good example of this was Einstein, who called the
@@ -2677,7 +2677,7 @@ about two million pieces of information: the order in your brain will have incre
 However, while you have been reading the book, you will have converted at least a thousand calories of
 ordered energy, in the form of food, into disordered energy, in the form of heat that you lose to the air around
 you by convection and sweat. This will increase the disorder of the universe by about twenty million million
-million million units – or about ten million million million times the increase in order in your brain – and that's if
+million million units - or about ten million million million times the increase in order in your brain - and that's if
 you remember everything in this book. In the next chapter but one I will try to increase the order in our neck of
 the woods a little further by explaining how people are trying to fit together the partial theories I have described
 to form a complete unified theory that would cover everything in the universe.CHAPTER 10
@@ -2920,7 +2920,7 @@ mechanics, despite the important role he had played in its development. Yet it s
 principle is a fundamental feature of the universe we live in. A successful unified theory must, therefore,
 necessarily incorporate this principle.
 As I shall describe, the prospects for finding such a theory seem to be much better now because we know so
-much more about the universe. But we must beware of overconfidence – we have had false dawns before! At
+much more about the universe. But we must beware of overconfidence - we have had false dawns before! At
 the beginning of this century, for example, it was thought that everything could be explained in terms of the
 properties of continuous matter, such as elasticity and heat conduction. The discovery of atomic structure and
 the uncertainty principle put an emphatic end to that. Then again, in 1928, physicist and Nobel Prize winner
@@ -3070,7 +3070,7 @@ we know them.
 It seems clear then that life, at least as we know it, can exist only in regions of space-time in which one time
 dimension and three space dimensions are not curled up small. This would mean that one could appeal to the
 weak anthropic principle, provided one could show that string theory does at least allow there to be such
-regions of the universe – and it seems that indeed string theory does. There may well be other regions of the
+regions of the universe - and it seems that indeed string theory does. There may well be other regions of the
 universe, or other universes (whatever that may mean), in which all the dimensions are curled up small or in
 which more than four dimensions are nearly flat, but there would be no intelligent beings in such regions to
 observe the different number of effective dimensions.
@@ -3088,7 +3088,7 @@ fundamental than the others. They appear to be different approximations to some 
 valid in different situations.
 People have searched for this underlying theory, but without any success so far. However, I believe there may
 not be any single formulation of the fundamental theory any more than, as Godel showed, one could formulate
-arithmetic in terms of a single set of axioms. Instead it may be like maps – you can't use a single map to
+arithmetic in terms of a single set of axioms. Instead it may be like maps - you can't use a single map to
 describe the surface of the earth or an anchor ring: you need at least two maps in the case of the earth and four
 for the anchor ring to cover every point. Each map is valid only in a limited region, but different maps will have a
 region of overlap. The collection of maps provides a complete description of the surface. Similarly, in physics it
@@ -3250,7 +3250,7 @@ the great tradition of philosophy from Aristotle to Kant!
 However, if we do discover a complete theory, it should in time be understandable in broad principle by
 everyone, not just a few scientists. Then we shall all, philosophers, scientists, and just ordinary people, be able
 to take part in the discussion of the question of why it is that we and the universe exist. If we find the answer to
-that, it would be the ultimate triumph of human reason – for then we would know the mind of God.
+that, it would be the ultimate triumph of human reason - for then we would know the mind of God.
 ALBERT EINSTEIN
 Einstein's connection with the politics of the nuclear bomb is well known: he signed the famous letter to
 President Franklin Roosevelt that persuaded the United States to take the idea seriously, and he engaged in
@@ -3271,11 +3271,11 @@ fined a mere six dollars). But Einstein was phlegmatic. When a book was publishe
 Against Einstein, he retorted, "If I were wrong, then one would have been enough!"
 In 1933, Hitler came to power. Einstein was in America, and declared he would not return to Germany. Then,
 while Nazi militia raided his house and confiscated his bank account, a Berlin newspaper displayed the
-headline "Good News from Einstein – He's Not Coming Back." In the face of the Nazi threat, Einstein
+headline "Good News from Einstein - He's Not Coming Back." In the face of the Nazi threat, Einstein
 renounced pacifism, and eventually, fearing that German scientists would build a nuclear bomb, proposed that
 the United States should develop its own. But even before the first atomic bomb had been detonated, he was
 publicly warning of the dangers of nuclear war and proposing international control of nuclear weaponry.
-Throughout his life, Einstein's efforts toward peace probably achieved little that would last – and certainly won
+Throughout his life, Einstein's efforts toward peace probably achieved little that would last - and certainly won
 him few friends. His vocal support of the Zionist cause, however, was duly recognized in 1952, when he was
 offered the presidency of Israel. He declined, saying he thought he was too naive in politics. But perhaps his
 real reason was different: to quote him again, "Equations are more important to me, because politics is for the
@@ -3302,7 +3302,7 @@ Copernican theories, on two conditions: he would not take sides and would come t
 could in any case not determine how the world worked because God could bring about the same effects in
 ways unimagined by man, who could not place restrictions on God's omnipotence.
 The book, Dialogue Concerning the Two Chief World Systems, was completed and published in 1632, with the
-full backing of the censors – and was immediately greeted throughout Europe as a literary and philosophical
+full backing of the censors - and was immediately greeted throughout Europe as a literary and philosophical
 masterpiece. Soon the Pope, realizing that people were seeing the book as a convincing argument in favor of
 Copernicanism, regretted having allowed its publication. The Pope argued that although the book had the
 official blessing of the censors, Galileo had nevertheless contravened the 1616 decree. He brought Galileo
@@ -3314,8 +3314,8 @@ was smuggled to a publisher in Holland. It was this work, referred to as Two New
 support for Copernicus, that was to be the genesis of modern physics.
 ISAAC NEWTON
 Isaac Newton was not a pleasant man. His relations with other academics were notorious, with most of his later
-life spent embroiled in heated disputes. Following publication of Principia Mathematica – surely the most
-influential book ever written in physics – Newton had risen rapidly into public prominence. He was appointed
+life spent embroiled in heated disputes. Following publication of Principia Mathematica - surely the most
+influential book ever written in physics - Newton had risen rapidly into public prominence. He was appointed
 president of the Royal Society and became the first scientist ever to be knighted.
 Newton soon clashed with the Astronomer Royal, John Flamsteed, who had earlier provided Newton with
 much-needed data for Principia, but was now withholding information that Newton wanted. Newton would not
@@ -3329,7 +3329,7 @@ independently developed a branch of mathematics called calculus, which underlies
 Although we now know that Newton discovered calculus years before Leibniz, he published his work much
 later. A major row ensued over who had been first, with scientists vigorously defending both contenders. It is
 remarkable, however, that most of the articles appearing in defense of Newton were originally written by his
-own hand – and only published in the name of friends! As the row grew, Leibniz made the mistake of appealing
+own hand - and only published in the name of friends! As the row grew, Leibniz made the mistake of appealing
 to the Royal Society to resolve the dispute. Newton, as president, appointed an "impartial" committee to
 investigate, coincidentally consisting entirely of Newton's friends! But that was not all: Newton then wrote the
 committee's report himself and had the Royal Society publish it, officially accusing Leibniz of plagiarism. Still
@@ -3437,10 +3437,10 @@ single pulse to reach the object and be reflected back.
 Radioactivity: The spontaneous breakdown of one type of atomic nucleus into another.
 Red shift: The reddening of light from a star that is moving away from us, due to the Doppler effect.
 Singularity: A point in space-time at which the space-time curvature becomes infinite.
-Singularity theorem: A theorem that shows that a singularity must exist under certain circumstances – in
+Singularity theorem: A theorem that shows that a singularity must exist under certain circumstances - in
 particular, that the universe must have started with a singularity.
 Space-time: The four-dimensional space whose points are events.
-Spatial dimension: Any of the three dimensions that are spacelike – that is, any except the time dimension.
+Spatial dimension: Any of the three dimensions that are spacelike - that is, any except the time dimension.
 Special relativity: Einstein's theory based on the idea that the laws of science should be the same for all
 observers, no matter how they are moving, in the absence of gravitational phenomena.
 Spectrum: The component frequencies that make up a wave. The visible part of the sun's spectrum can be
