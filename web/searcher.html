@@ -1,0 +1,43 @@
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+      <script type="importmap">
+        {
+          "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+          }
+        }
+      </script>
+      <script type="module">
+        import '@material/web/all.js';
+        import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+      </script>
+    <title>freakypdf search tool</title>
+    
+</head>
+
+<script src="https://unpkg.com/pdf-lib"></script>
+<script src="../build/pdf.mjs" type="module"></script>
+</script>
+<script src="./script.js">
+</script>
+<center>
+<h1 class="md-typescale-display-medium">pdf search tool!</h1>
+
+
+    <md-outlined-button onclick="importData()" class="mdc-button">Select pdf👅</md-outlined-button>
+  <md-filled-tonal-button id="prev">Previous</md-filled-tonal-button>
+  <md-filled-tonal-button id="next">Next</md-filled-tonal-button>
+    <md-filled-button disabled id="search">Search</md-filled-button>
+    <md-filled-button disabled id="export" >Export</md-filled-button>
+  <br><br>
+  <p class="md-typescale-body-medium">Page: <span class="md-typescale-body-medium" id="page_num">-</span> / <span class="md-typescale-body-medium" id="page_count">-</span></p>
+
+
+<canvas id="the-canvas"></canvas>
+<br>
+<h2 id="pagesContaining" class="md-typescale-headline-medium" style="inline-size: 50%; overflow-wrap: break-word;">search for a term</h2>
+<br>
+<h3 id="progress" class="md-typescale-title-medium" >no search in progress</h3>
+</center>
