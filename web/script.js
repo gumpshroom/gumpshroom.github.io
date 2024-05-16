@@ -139,6 +139,17 @@ function loadPdf(pdfData) {
     }
     document.getElementById('prev').addEventListener('click', onPrevPage);
 
+
+    document.getElementById('goto').addEventListener('click', function() {
+        var prompted = parseInt(prompt("enter page number!"))
+        if (prompted < 1 || prompted > pdfDocument.numPages) {
+            alert("invalid page!")
+            return
+        } else {
+            pageNum = prompted
+            queueRenderPage(pageNum)
+        }
+    })
     /**
      * Displays next page.
      */
