@@ -1,5 +1,5 @@
 var pagesContaining = []
-
+//add highlight, advanced search
 function importData() {
     pagesContaining = []
     let input = document.createElement('input');
@@ -167,14 +167,53 @@ function loadPdf(pdfData) {
      */
     pdfjsLib.getDocument(pdfData).promise.then(function(pdfDocument_) {
         pdfDocument = pdfDocument_;
-        
+
         document.getElementById('page_count').textContent = pdfDocument.numPages;
         document.getElementById("search").disabled = null
         document.getElementById("search").onclick = function() {
             pagesContaining = []
-            var searchTerm = prompt("Enter a search term!")
+            var qs = prompt("Enter a search term!")
             var finishedPages = 0
-            for(var x = 1; x <= pdfDocument.numPages; x++) {
+            var everything = []
+            var onlyWordsWithSeparators = qs.split(/\s*(AND|OR|NOT)+\s*/g).filter(Boolean);
+            console.log(onlyWordsWithSeparators)
+            for (var g = 0; g < onlyWordsWithSeparators.length; g++) {
+                onlyWordsWithSeparators[g] = { str: onlyWordsWithSeparators[g], i: g }
+                everything.push(onlyWordsWithSeparators[g])
+            }
+
+            //var signs = qs.match(/(AND|OR|NOT)/g) || []
+            for (var i = 0; i < everything.length; i++) {
+                switch (everything[i].str) {
+                    case "AND":
+                        everything[i].str = "&&"
+                        break
+                    case "OR":
+                        everything[i].str = "||"
+                        break
+                    case "NOT":
+                        everything[i].str = "!"
+                        break
+                    default:
+                        if (!everything[i].str.match(/(AND|OR|NOT)/)) {
+                            everything[i].str = "t.includes('" + everything[i].str.toLowerCase() + "')"
+                        }
+                        break
+                }
+            }
+            everything.sort((a, b) => {
+                a.i - b.i
+            })
+            console.log(everything)
+            var str = "var t = fullText.toLowerCase(); ("
+            for (var p = 0; p < everything.length - 1; p++) {
+                str += everything[p].str + " "
+            }
+            str += everything[everything.length - 1].str + ")"
+            var alerted = false
+            console.log(str)
+
+            for (var x = 1; x <= pdfDocument.numPages; x++) {
                 var y = x
                 pdfDocument.getPage(y).then(async function(page) {
                     var textStream = page.streamTextContent()
@@ -189,13 +228,30 @@ function loadPdf(pdfData) {
                         }
                     }
 
-                    if (fullText.toLowerCase().includes(searchTerm.toLowerCase())) {
+                    /*if (fullText.toLowerCase().includes(searchTerm.toLowerCase())) {
                         pagesContaining.push(page.pageNumber)
-                    } 
+                    } */
+                    //parse stuff
+                    //use 'eval'
+                    //first change to a readable expression
+
+                    var result = false
+                    try {
+                        result = eval(str)
+                    } catch {
+                        if (!alerted) {
+                            alert("invalid query")
+                            alerted = true
+                        }
+                        return
+                    }
+                    if (result) {
+                        pagesContaining.push(page.pageNumber)
+                    }
                     if (pagesContaining.length !== 0) {
-                        document.getElementById("pagesContaining").innerHTML = "pages containing '" + searchTerm + "':\n\n" + JSON.stringify(pagesContaining)
+                        document.getElementById("pagesContaining").innerHTML = "pages containing '" + qs + "':\n\n" + pagesContaining.length
                     } else {
-                        document.getElementById("pagesContaining").innerHTML = "no instances of '" + searchTerm + "' found"
+                        document.getElementById("pagesContaining").innerHTML = "no instances of '" + qs + "' found"
                     }
                     finishedPages++
                     document.getElementById("progress").innerHTML = "please wait... searched " + finishedPages + "/" + pdfDocument.numPages + " pages"
