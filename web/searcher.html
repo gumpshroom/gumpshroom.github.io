@@ -69,12 +69,7 @@
                 <md-filled-text-field label="search expression" id="searchText"></md-filled-text-field>
                 <select name="pets" id="pet-select" onchange="changePreset(this.value)">
                   <option value="">--no preset--</option>
-                  <option value="dog">PA</option>
-                  <option value="cat">NY</option>
-                  <option value="hamster">Buffalo bills</option>
-                  <option value="parrot">NYC</option>
-                  <option value="spider">Az</option>
-                  <option value="goldfish">ARIZONA</option>
+                  
                 </select>
             </form>
             
@@ -118,6 +113,9 @@
         });
         document.getElementById("loadingDialog").addEventListener('cancel', event => event.preventDefault());
         anchorEl.addEventListener('click', () => {menuEl.open = !menuEl.open;});
+        Object.keys(PRESETS).forEach(preset => {
+            document.getElementById("pet-select").innerHTML += "<option value=" + preset + ">" + preset + "</option>"
+        })
     </script>
 
     <md-filled-button id="prev">Previous</md-filled-button>
