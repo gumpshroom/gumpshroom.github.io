@@ -318,3 +318,8 @@ function loadPdf(pdfData) {
     });
 
 }
+function changePreset(preset) {
+    //TODO use "presets" obj, for now just do manually
+    document.getElementById("searchText").value = preset === "--no preset--" ? "" : preset
+    console.log("changed preset " + preset)
+}
