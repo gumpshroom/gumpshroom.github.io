@@ -1,22 +1,35 @@
 var pagesContaining = []
+var pdfDocument = null
 //add highlight, advanced search
-function importData() {
+
+
+function importData(fromURL) {
     pagesContaining = []
-    let input = document.createElement('input');
-    input.type = 'file';
-    input.accept = '.pdf'
-    input.onchange = _ => {
-        // you can use this method to get file and perform respective operations
-        let file = Array.from(input.files)[0];
-        var fileReader = new FileReader()
-        fileReader.onload = function() {
-            var arr = new Uint8Array(this.result)
-            loadPdf(arr)
-        }
-        fileReader.readAsArrayBuffer(file);
-    };
-    input.click();
+    if (fromURL === -1) {
+        alert("error")
+        return
+    }
+    if (!fromURL) {
+        let input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.pdf'
+        input.onchange = _ => {
+            // you can use this method to get file and perform respective operations
+            let file = Array.from(input.files)[0];
+            var fileReader = new FileReader()
+            fileReader.onload = function() {
+                var arr = new Uint8Array(this.result)
+                loadPdf(arr)
+            }
+            fileReader.readAsArrayBuffer(file);
+        };
+        input.click();
+    } else {
+        loadPdf(fromURL)
+        
+    }
 }
+
 function loadPdf(pdfData) {
     console.log("loading")
     // Loaded via <script> tag, create shortcut to access PDF.js exports.
@@ -27,8 +40,7 @@ function loadPdf(pdfData) {
     // The workerSrc property shall be specified.
     pdfjsLib.GlobalWorkerOptions.workerSrc = '../build/pdf.worker.mjs';
 
-    var pdfDocument = null,
-        pageNum = 1,
+    var pageNum = 1,
         pageRendering = false,
         pageNumPending = null,
         scale = 0.8,
@@ -165,14 +177,14 @@ function loadPdf(pdfData) {
     /**
      * Asynchronously downloads PDF.
      */
-    pdfjsLib.getDocument(pdfData).promise.then(function(pdfDocument_) {
+
+
+    //load the docukemt 
+    function loadDockewment(pdfDocument_) {
         pdfDocument = pdfDocument_;
 
-        document.getElementById('page_count').textContent = pdfDocument.numPages;
-        document.getElementById("search").disabled = null
-        document.getElementById("search").onclick = function() {
+        function searchHandler(qs) {
             pagesContaining = []
-            var qs = prompt("Enter a search term!")
             var finishedPages = 0
             var everything = []
             var onlyWordsWithSeparators = qs.split(/\s*(AND|OR|NOT)+\s*/g).filter(Boolean);
@@ -283,7 +295,26 @@ function loadPdf(pdfData) {
                 window.open(url, '_blank');
             }
         }
+
+        document.getElementById('page_count').textContent = pdfDocument.numPages;
+        document.getElementById("search").disabled = null
+        document.getElementById("searchDialog").addEventListener('close', function(e) {
+            if (e.srcElement.returnValue === "load") {
+                searchHandler(document.getElementById("searchText").value)
+            }
+        })
+        document.getElementById("search").onclick = function() {
+            document.getElementById("searchDialog").open = true
+        }
         // Initial/first page rendering
+        document.getElementById("loadingDialog").open = null
         renderPage(pageNum);
+    }
+
+
+    pdfjsLib.getDocument(pdfData).promise.then(loadDockewment).catch(function(e) {
+        alert("error: " + e.message + " : " + e.name)
+        document.getElementById("loadingDialog").open = null
     });
+
 }
