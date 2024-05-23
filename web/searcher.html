@@ -24,7 +24,7 @@
 </script>
 <center>
     <br>
-    <h1 class="md-typescale-display-medium">freakypdf search tool v1.3</h1>
+    <h1 class="md-typescale-display-medium">freakypdf search tool v1.3.1</h1>
     <br>
     <span style="position: relative">
         <md-outlined-button id="usage-anchor">Import...</md-outlined-button>
@@ -35,6 +35,7 @@
                 <span class="headline">Import URL</span>
             </span>
             <form id="form" slot="content" method="dialog" class="contact-content">
+                <p class="md-typescale-body-compact">note: you must be logged in to the host site to access authenticated pdfs</p><br>
                 <!--p class="md-typescale-body-compact">if it doesn't work, please install <a
                         href="https://chromewebstore.google.com/detail/lhobafahddgcelffkeicbaginigeejlf?hl=en">this</a>.
                     <a href="whyextension.html">more info</a></p-->
@@ -113,7 +114,7 @@
         });
         document.getElementById("loadingDialog").addEventListener('cancel', event => event.preventDefault());
         anchorEl.addEventListener('click', () => {menuEl.open = !menuEl.open;});
-        Object.keys(PRESETS).forEach(preset => {
+        Object.keys(PRESETS).sort().forEach(preset => {
             document.getElementById("pet-select").innerHTML += "<option value=" + preset + ">" + preset + "</option>"
         })
     </script>
