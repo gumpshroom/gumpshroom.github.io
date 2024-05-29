@@ -24,7 +24,7 @@
 </script>
 <center>
     <br>
-    <h1 class="md-typescale-display-medium">freakypdf search tool v1.3.1</h1>
+    <h1 class="md-typescale-display-medium">freakypdf search tool v1.3.2</h1>
     <br>
     <span style="position: relative">
         <md-outlined-button id="usage-anchor">Import...</md-outlined-button>
@@ -67,7 +67,7 @@
             <form id="searf" slot="content" method="dialog" class="contact-content">
                 <i class="md-typescale-body-compact">you may use "AND", "OR", "NOT" as logic operators in search<br>(e.g. "blob OR
                     blue", "blurb AND NOT blub")</i><br><br>
-                <md-filled-text-field label="search expression" id="searchText"></md-filled-text-field>
+                <md-filled-text-field type="textarea" label="search expression" id="searchText"></md-filled-text-field>
                 <select name="pets" id="pet-select" onchange="changePreset(this.value)">
                   <option value="">--no preset--</option>
                   

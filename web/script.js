@@ -41,7 +41,8 @@ var PRESETS = {
     "NY": ['ARMORLESS BRIDGE JOINT SYSTEM', 'MODULAR EXPANSION JOINT SYSTEM - ONE CELL', 'MODULAR EXPANSION JOINT SYSTEM - TWO CELL', 'MODULAR EXPANSION JOINT SYSTEM - THREE CELL', 'BRIDGE JOINT HEADER', 'BRIDGE JOINT SEAL', 'ELASTOMERIC EXPANSION JOINT SYSTEMS WITH WEAR PLATES', 'ASPHALTIC PLUG JOINTS FOR BRIDGES', 'RESEALING BRIDGE DECK JOINTS', 'REPLACING MODULAR SEAL FOR EXISTING BRIDGE JOINTS', 'SEALING EXISTING BRIDGE JOINTS', 'REPLACING COMPRESSION SEAL FOR EXISTING BRIDGE JOINTS', 'ELASTOMERIC EXPANSION JOINT SYSTEMS', 'ELASTOMERIC CONCRETE', 'BRIDGE JOINT SEAL FOAM-SUPPORTED SILICONE', 'ARMORED JOINT WITH COMPRESSION SEAL', 'SLEEPER SLAB (HIDDEN… SILICONE JOINT SEAL)', 'HYBRID COMPOSITE SYNTHETIC CONCRETE JOINT HEADER', 'POLYESTER POLYMER CONCRETE PPC'],
     "PA": ['tooth expansion dam with drain trough', 'neoprene strip seal dam ', 'bridge expansion joint system', 'strip seal gland', 'preformed neoprene compression seal', 'expansion dam replacement', 'asphaltic plug expansion dam', 'bridge expansion dam system ', 'expansion joint material replacement', 'EMSEAL BRIDGE EXPANSION JOINT SYSTEM', 'POLYMER MORTAR FOR BRIDGE JOINT EXPANSION DAM', 'SILICONE SEALANT FOR BRIDGE JOINT EXPANSION DAM', 'BRIDGE STRUCTURE (HIDDEN ITEMS)', 'MODULAR EXPANSION DEVICE', 'PRECOMPRESSED SILICONE AND FOAM HYBRID JOINT SEALING MATERIAL', 'SILICONE JOINT SEALING MATERIAL', 'FABRIC REINFORCED BRIDGE DRAIN TROUGH', 'ACCELERATED EXPANSION DAM REPLACEMENT', 'TWO PART RAPID CURE SILICONE SEALANT', 'BRIDGE EXPANSION JOINT SEAL SYSTEM', 'TRANSFLEX JOINT ', 'NEOPRENE STRIP SEAL GLAND REPLACEMENT', 'REPAIR DECK JOINT DRAIN TROUGH', 'POLYESTER POLYMER CONCRETE OVERLAY'],
     "RI": ['SILICONE HIGHWAY JOINT SEALER', 'asphaltic expansion joint system', 'polyurethane elastomeric joint seal', 'strip seal expansion joints', 'precompressed joint seal ', 'modular expansion joint assembly'],
-    "VT": ['BRIDGE EXPANSION JOINT, ASPHALTIC PLUG', 'BRIDGE EXPANSION JOINT, FINGER PLATE', 'BRIDGE EXPANSION JOINT, STRIP SEAL', 'PRECOMPRESSED SEAL BRIDGE JIONT']
+    "VT": ['BRIDGE EXPANSION JOINT, ASPHALTIC PLUG', 'BRIDGE EXPANSION JOINT, FINGER PLATE', 'BRIDGE EXPANSION JOINT, STRIP SEAL', 'PRECOMPRESSED SEAL BRIDGE JIONT'],
+    "all WBA": ['modular', 'expansion', 'joint', 'finger', 'tooth', 'plan view', 'watson bowman', 'anchor stud', 'anchor studs', 'temperature', 'sidewalk cover', 'cover plate', 'slope', 'wabo', 'transflex', 'waboflex']
 }
 
 
@@ -305,12 +306,16 @@ function loadPdf(pdfData) {
                     if (pagesContaining.length !== 0) {
                         document.getElementById("pagesContaining").innerHTML = "pages containing '" + qs + "':\n\n" + pagesContaining.length
                     } else {
-                        document.getElementById("pagesContaining").innerHTML = "no instances of '" + qs + "' found"
+                        document.getElementById("pagesContaining").innerHTML = "nothing found yet. please wait for search"
                     }
                     finishedPages++
                     document.getElementById("progress").innerHTML = "please wait... searched " + finishedPages + "/" + pdfDocument.numPages + " pages"
                     if (finishedPages === pdfDocument.numPages) {
                         document.getElementById("progress").innerHTML = "done! press 'export' to save selected pages as new PDF"
+                        if (pagesContaining.length === 0) {
+                            alert("no instances of query found! pdf might not be searchable. try OCR on it first.")
+                            document.getElementById("pagesContaining").innerHTML = "no instances of '" + qs + "' found"
+                        }
                     }
                 })
             }
@@ -335,6 +340,7 @@ function loadPdf(pdfData) {
                 const blob = new Blob([pdfBytes], { type: "application/pdf" });
                 const url = URL.createObjectURL(blob);
                 window.open(url, '_blank');
+                location.reload()
             }
         }
 
