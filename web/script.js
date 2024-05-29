@@ -42,7 +42,7 @@ var PRESETS = {
     "PA": ['tooth expansion dam with drain trough', 'neoprene strip seal dam ', 'bridge expansion joint system', 'strip seal gland', 'preformed neoprene compression seal', 'expansion dam replacement', 'asphaltic plug expansion dam', 'bridge expansion dam system ', 'expansion joint material replacement', 'EMSEAL BRIDGE EXPANSION JOINT SYSTEM', 'POLYMER MORTAR FOR BRIDGE JOINT EXPANSION DAM', 'SILICONE SEALANT FOR BRIDGE JOINT EXPANSION DAM', 'BRIDGE STRUCTURE (HIDDEN ITEMS)', 'MODULAR EXPANSION DEVICE', 'PRECOMPRESSED SILICONE AND FOAM HYBRID JOINT SEALING MATERIAL', 'SILICONE JOINT SEALING MATERIAL', 'FABRIC REINFORCED BRIDGE DRAIN TROUGH', 'ACCELERATED EXPANSION DAM REPLACEMENT', 'TWO PART RAPID CURE SILICONE SEALANT', 'BRIDGE EXPANSION JOINT SEAL SYSTEM', 'TRANSFLEX JOINT ', 'NEOPRENE STRIP SEAL GLAND REPLACEMENT', 'REPAIR DECK JOINT DRAIN TROUGH', 'POLYESTER POLYMER CONCRETE OVERLAY'],
     "RI": ['SILICONE HIGHWAY JOINT SEALER', 'asphaltic expansion joint system', 'polyurethane elastomeric joint seal', 'strip seal expansion joints', 'precompressed joint seal ', 'modular expansion joint assembly'],
     "VT": ['BRIDGE EXPANSION JOINT, ASPHALTIC PLUG', 'BRIDGE EXPANSION JOINT, FINGER PLATE', 'BRIDGE EXPANSION JOINT, STRIP SEAL', 'PRECOMPRESSED SEAL BRIDGE JIONT'],
-    "all WBA": ['modular', 'expansion', 'joint', 'finger', 'tooth', 'plan view', 'watson bowman', 'anchor stud', 'anchor studs', 'temperature', 'sidewalk cover', 'cover plate', 'slope', 'wabo', 'transflex', 'waboflex']
+    "allWBA": ['modular', 'expansion', 'joint', 'finger', 'tooth', 'plan view', 'watson bowman', 'anchor stud', 'anchor studs', 'temperature', 'sidewalk cover', 'cover plate', 'slope', 'wabo', 'transflex', 'waboflex']
 }
 
 
