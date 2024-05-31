@@ -340,7 +340,7 @@ function loadPdf(pdfData) {
                 const blob = new Blob([pdfBytes], { type: "application/pdf" });
                 const url = URL.createObjectURL(blob);
                 window.open(url, '_blank');
-                location.reload()
+                //location.reload()
             }
         }
 
