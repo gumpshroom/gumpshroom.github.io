@@ -6,28 +6,203 @@ class PokerOddsQuiz {
         this.ranks = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
         this.currentSituation = null;
         this.stats = this.loadStats();
+        this.currentMode = 'quiz'; // 'quiz' or 'calculator'
         
+        this.initializeTheme();
+        this.initializePWA();
         this.initializeEventListeners();
         this.updateSliderValues();
         this.updateStatsDisplay();
         this.generateNewHand();
     }
 
+    initializeTheme() {
+        // Load saved theme
+        const savedTheme = localStorage.getItem('poker-quiz-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        this.updateThemeIcon(savedTheme);
+    }
+
+    initializePWA() {
+        // Check if PWA can be installed
+        let deferredPrompt;
+        const installButton = document.getElementById('install-btn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installButton.style.display = 'flex';
+        });
+
+        installButton.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    installButton.style.display = 'none';
+                }
+                deferredPrompt = null;
+            }
+        });
+
+        // Hide install button if already installed
+        window.addEventListener('appinstalled', () => {
+            installButton.style.display = 'none';
+        });
+    }
+
     initializeEventListeners() {
+        // Theme toggle
+        document.getElementById('theme-toggle').addEventListener('click', () => this.toggleTheme());
+
+        // Mode toggle
+        document.getElementById('quiz-mode').addEventListener('click', () => this.switchMode('quiz'));
+        document.getElementById('calc-mode').addEventListener('click', () => this.switchMode('calculator'));
+
         // Slider value updates
         const sliders = ['pot-odds', 'equity', 'bluff-rate', 'implied-odds', 'reverse-implied'];
         sliders.forEach(id => {
             const slider = document.getElementById(id);
-            const valueSpan = document.getElementById(id + '-value');
-            slider.addEventListener('input', () => {
-                valueSpan.textContent = slider.value + '%';
-            });
+            if (slider) {
+                const valueSpan = document.getElementById(id + '-value');
+                slider.addEventListener('input', () => {
+                    valueSpan.textContent = slider.value + '%';
+                });
+            }
         });
 
-        // Button listeners
+        // Quiz mode button listeners
         document.getElementById('submit-answer').addEventListener('click', () => this.submitAnswer());
         document.getElementById('new-hand').addEventListener('click', () => this.generateNewHand());
         document.getElementById('reset-stats').addEventListener('click', () => this.resetStats());
+
+        // Calculator mode listeners
+        document.getElementById('calculate-odds').addEventListener('click', () => this.calculateCustomOdds());
+        document.getElementById('calc-stage').addEventListener('change', () => this.updateCalculatorBoard());
+        
+        // Initialize calculator board visibility
+        this.updateCalculatorBoard();
+    }
+
+    toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('poker-quiz-theme', newTheme);
+        this.updateThemeIcon(newTheme);
+    }
+
+    updateThemeIcon(theme) {
+        const themeIcon = document.querySelector('#theme-toggle .material-symbols-outlined');
+        themeIcon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+    }
+
+    switchMode(mode) {
+        this.currentMode = mode;
+        
+        // Update button states
+        document.getElementById('quiz-mode').classList.toggle('active', mode === 'quiz');
+        document.getElementById('calc-mode').classList.toggle('active', mode === 'calculator');
+        
+        // Show/hide sections
+        document.getElementById('quiz-section').classList.toggle('active', mode === 'quiz');
+        document.getElementById('calculator-section').classList.toggle('active', mode === 'calculator');
+    }
+
+    updateCalculatorBoard() {
+        const stage = document.getElementById('calc-stage').value;
+        const turnCard = document.getElementById('turn-card');
+        const riverCard = document.getElementById('river-card');
+        
+        turnCard.style.display = stage === 'flop' ? 'none' : 'flex';
+        riverCard.style.display = stage === 'river' ? 'flex' : 'none';
+    }
+
+    calculateCustomOdds() {
+        const stage = document.getElementById('calc-stage').value;
+        const potSize = parseInt(document.getElementById('calc-pot-size').value);
+        const betSize = parseInt(document.getElementById('calc-bet-size').value);
+        
+        // Get hero cards
+        const heroCard1 = this.getCardFromSelectors('hero-card1');
+        const heroCard2 = this.getCardFromSelectors('hero-card2');
+        
+        if (!heroCard1 || !heroCard2) {
+            alert('Please select both hero cards');
+            return;
+        }
+        
+        // Get board cards
+        const boardCards = [];
+        const requiredBoardCards = stage === 'flop' ? 3 : stage === 'turn' ? 4 : 5;
+        
+        for (let i = 1; i <= 5; i++) {
+            const card = this.getCardFromSelectors(`board-card${i}`);
+            if (i <= requiredBoardCards) {
+                if (!card) {
+                    alert(`Please select all ${requiredBoardCards} board cards for ${stage}`);
+                    return;
+                }
+                boardCards.push(card);
+            }
+        }
+        
+        // Check for duplicate cards
+        const allCards = [heroCard1, heroCard2, ...boardCards];
+        const cardStrings = allCards.map(card => card.rank + card.suit);
+        const uniqueCards = new Set(cardStrings);
+        
+        if (uniqueCards.size !== allCards.length) {
+            alert('Duplicate cards detected. Please ensure all cards are unique.');
+            return;
+        }
+        
+        // Create situation object
+        const situation = {
+            stage,
+            heroCards: [heroCard1, heroCard2],
+            communityCards: boardCards,
+            potSize,
+            betSize,
+            deck: this.getRemainingDeck(allCards)
+        };
+        
+        // Calculate and display results
+        const results = this.calculateCorrectAnswers(situation);
+        this.displayCalculatorResults(results);
+    }
+
+    getCardFromSelectors(prefix) {
+        const rank = document.getElementById(`${prefix}-rank`).value;
+        const suit = document.getElementById(`${prefix}-suit`).value;
+        
+        if (!rank || !suit) return null;
+        return { rank, suit };
+    }
+
+    getRemainingDeck(usedCards) {
+        const deck = this.createDeck();
+        const usedCardStrings = usedCards.map(card => card.rank + card.suit);
+        
+        return deck.filter(card => {
+            const cardString = card.rank + card.suit;
+            return !usedCardStrings.includes(cardString);
+        });
+    }
+
+    displayCalculatorResults(results) {
+        document.getElementById('calc-results').style.display = 'block';
+        document.getElementById('calc-pot-odds').textContent = results.potOdds.toFixed(1) + '%';
+        document.getElementById('calc-equity').textContent = results.equity.toFixed(1) + '%';
+        document.getElementById('calc-bluff-rate').textContent = results.bluffRate.toFixed(1) + '%';
+        
+        // Calculate EV of call
+        const ev = (results.equity / 100) * (results.potOdds / 100) - (results.betSize / (results.potSize + results.betSize));
+        document.getElementById('calc-ev').textContent = ev.toFixed(2);
+        
+        // Scroll to results
+        document.getElementById('calc-results').scrollIntoView({ behavior: 'smooth' });
     }
 
     updateSliderValues() {
@@ -138,31 +313,33 @@ class PokerOddsQuiz {
         }
     }
 
-    calculateCorrectAnswers() {
-        const situation = this.currentSituation;
+    calculateCorrectAnswers(situation = null) {
+        const currentSituation = situation || this.currentSituation;
         
         // Calculate pot odds
-        const potOdds = (situation.betSize / (situation.potSize + situation.betSize)) * 100;
+        const potOdds = (currentSituation.betSize / (currentSituation.potSize + currentSituation.betSize)) * 100;
         
         // Calculate equity (simplified Monte Carlo simulation)
-        const equity = this.calculateEquity(situation);
+        const equity = this.calculateEquity(currentSituation);
         
         // Calculate villain's profitable bluff rate
         // Formula: (Pot Size) / (Pot Size + Bet Size) * 100
-        const bluffRate = (situation.potSize / (situation.potSize + situation.betSize)) * 100;
+        const bluffRate = (currentSituation.potSize / (currentSituation.potSize + currentSituation.betSize)) * 100;
         
         // Calculate implied odds (estimated based on hand strength and position)
-        const impliedOdds = this.calculateImpliedOdds(situation, equity);
+        const impliedOdds = this.calculateImpliedOdds(currentSituation, equity);
         
         // Calculate reverse implied odds (estimated based on hand vulnerability)
-        const reverseImpliedOdds = this.calculateReverseImpliedOdds(situation, equity);
+        const reverseImpliedOdds = this.calculateReverseImpliedOdds(currentSituation, equity);
         
         return {
             potOdds: Math.round(potOdds * 100) / 100,
             equity: Math.round(equity * 100) / 100,
             bluffRate: Math.round(bluffRate * 100) / 100,
             impliedOdds: Math.round(impliedOdds * 100) / 100,
-            reverseImpliedOdds: Math.round(reverseImpliedOdds * 100) / 100
+            reverseImpliedOdds: Math.round(reverseImpliedOdds * 100) / 100,
+            potSize: currentSituation.potSize,
+            betSize: currentSituation.betSize
         };
     }
 
