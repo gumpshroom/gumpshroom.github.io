@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texas Hold'em Odds Quiz</title>
+    <link rel="stylesheet" href="oddsQuiz.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Texas Hold'em Odds Quiz</h1>
+            <p>Test your poker odds calculation skills!</p>
+        </header>
+
+        <div class="game-area">
+            <div class="situation-display">
+                <h2>Current Situation</h2>
+                <div class="board-state">
+                    <div class="stage" id="stage">Flop</div>
+                    <div class="pot-size">Pot: $<span id="pot-size">100</span></div>
+                    <div class="bet-size">Villain bets: $<span id="bet-size">50</span></div>
+                </div>
+                
+                <div class="cards-display">
+                    <div class="hero-cards">
+                        <h3>Your Cards</h3>
+                        <div class="cards" id="hero-cards">
+                            <div class="card">A♠</div>
+                            <div class="card">K♣</div>
+                        </div>
+                    </div>
+                    
+                    <div class="community-cards">
+                        <h3>Board</h3>
+                        <div class="cards" id="community-cards">
+                            <div class="card">2♥</div>
+                            <div class="card">7♦</div>
+                            <div class="card">Q♠</div>
+                            <div class="card hidden">?</div>
+                            <div class="card hidden">?</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <h2>Your Estimates</h2>
+                
+                <div class="slider-group">
+                    <label for="pot-odds">Pot Odds (%)</label>
+                    <input type="range" id="pot-odds" min="0" max="100" value="50">
+                    <span class="value" id="pot-odds-value">50%</span>
+                </div>
+
+                <div class="slider-group">
+                    <label for="equity">Your Equity (%)</label>
+                    <input type="range" id="equity" min="0" max="100" value="50">
+                    <span class="value" id="equity-value">50%</span>
+                </div>
+
+                <div class="slider-group">
+                    <label for="bluff-rate">Villain's Profitable Bluff Rate (%)</label>
+                    <input type="range" id="bluff-rate" min="0" max="100" value="50">
+                    <span class="value" id="bluff-rate-value">50%</span>
+                </div>
+
+                <div class="slider-group">
+                    <label for="implied-odds">Implied Odds (%)</label>
+                    <input type="range" id="implied-odds" min="0" max="100" value="50">
+                    <span class="value" id="implied-odds-value">50%</span>
+                </div>
+
+                <div class="slider-group">
+                    <label for="reverse-implied">Reverse Implied Odds (%)</label>
+                    <input type="range" id="reverse-implied" min="0" max="100" value="50">
+                    <span class="value" id="reverse-implied-value">50%</span>
+                </div>
+
+                <button id="submit-answer">Submit Answer</button>
+                <button id="new-hand">New Hand</button>
+            </div>
+        </div>
+
+        <div class="results-section" id="results" style="display: none;">
+            <h2>Results</h2>
+            <div class="correct-answers" id="correct-answers"></div>
+            <div class="score" id="score"></div>
+        </div>
+
+        <div class="stats-section">
+            <h2>Your Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">Pot Odds Accuracy</div>
+                    <div class="stat-value" id="pot-odds-avg">-</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Equity Accuracy</div>
+                    <div class="stat-value" id="equity-avg">-</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Bluff Rate Accuracy</div>
+                    <div class="stat-value" id="bluff-rate-avg">-</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Implied Odds Accuracy</div>
+                    <div class="stat-value" id="implied-odds-avg">-</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Reverse Implied Accuracy</div>
+                    <div class="stat-value" id="reverse-implied-avg">-</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Overall Average</div>
+                    <div class="stat-value" id="overall-avg">-</div>
+                </div>
+            </div>
+            <button id="reset-stats">Reset Statistics</button>
+        </div>
+    </div>
+
+    <script src="oddsQuiz.js"></script>
+</body>
+</html>
