@@ -1,0 +1,32 @@
+{
+  "name": "Texas Hold'em Odds Quiz",
+  "short_name": "Odds Quiz",
+  "description": "Test your poker odds calculation skills with this interactive quiz and calculator",
+  "start_url": "/oddsQuiz.html",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiM2NjdlZWEiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjEuNSI+CjxwYXRoIGQ9Ik0yIDEyaDIwTTEyIDJ2MjAiLz4KPHN2ZyB4PSItMiIgeT0iLTIiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KPGVsbGlwc2UgY3g9IjEyIiBjeT0iOCIgcng9IjQiIHJ5PSIzIiBmaWxsPSJ3aGl0ZSIvPgo8ZWxsaXBzZSBjeD0iMTIiIGN5PSIxNiIgcng9IjQiIHJ5PSIzIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4KPC9zdmc+Cjwvc3ZnPg==",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9IiM2NjdlZWEiLz4KPHN2ZyB4PSIxMjgiIHk9IjEyOCIgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIxLjUiPgo8cGF0aCBkPSJNMiAxMmgyME0xMiAydjIwIi8+CjxzdmcgeD0iLTIiIHk9Ii0yIiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSI+CjxlbGxpcHNlIGN4PSIxMiIgY3k9IjgiIHJ4PSI0IiByeT0iMyIgZmlsbD0id2hpdGUiLz4KPGVsbGlwc2UgY3g9IjEyIiBjeT0iMTYiIHJ4PSI0IiByeT0iMyIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cjwvc3ZnPgo8L3N2Zz4=",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["games", "education"],
+  "screenshots": [
+    {
+      "src": "https://github.com/user-attachments/assets/79178a20-ac90-469b-89d7-ce182deeab3e",
+      "sizes": "780x488",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}

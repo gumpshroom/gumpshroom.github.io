@@ -4,81 +4,370 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Texas Hold'em Odds Quiz</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Test your poker odds calculation skills with this interactive quiz and calculator">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Odds Quiz">
+    <meta name="msapplication-TileColor" content="#667eea">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Material Design 3 Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="oddsQuiz.css">
 </head>
 <body>
     <div class="container">
         <header>
+            <div class="header-controls">
+                <button id="theme-toggle" class="icon-button" title="Toggle theme">
+                    <span class="material-symbols-outlined">dark_mode</span>
+                </button>
+                <button id="install-btn" class="install-button" style="display: none;">
+                    <span class="material-symbols-outlined">download</span>
+                    Install App
+                </button>
+            </div>
             <h1>Texas Hold'em Odds Quiz</h1>
             <p>Test your poker odds calculation skills!</p>
+            
+            <div class="mode-toggle">
+                <button id="quiz-mode" class="mode-button active">
+                    <span class="material-symbols-outlined">quiz</span>
+                    Quiz Mode
+                </button>
+                <button id="calc-mode" class="mode-button">
+                    <span class="material-symbols-outlined">calculate</span>
+                    Calculator Mode
+                </button>
+            </div>
         </header>
 
         <div class="game-area">
-            <div class="situation-display">
-                <h2>Current Situation</h2>
-                <div class="board-state">
-                    <div class="stage" id="stage">Flop</div>
-                    <div class="pot-size">Pot: $<span id="pot-size">100</span></div>
-                    <div class="bet-size">Villain bets: $<span id="bet-size">50</span></div>
-                </div>
-                
-                <div class="cards-display">
-                    <div class="hero-cards">
-                        <h3>Your Cards</h3>
-                        <div class="cards" id="hero-cards">
-                            <div class="card">A♠</div>
-                            <div class="card">K♣</div>
-                        </div>
+            <!-- Quiz Mode -->
+            <div id="quiz-section" class="section active">
+                <div class="situation-display">
+                    <h2>Current Situation</h2>
+                    <div class="board-state">
+                        <div class="stage" id="stage">Flop</div>
+                        <div class="pot-size">Pot: $<span id="pot-size">100</span></div>
+                        <div class="bet-size">Villain bets: $<span id="bet-size">50</span></div>
                     </div>
                     
-                    <div class="community-cards">
-                        <h3>Board</h3>
-                        <div class="cards" id="community-cards">
-                            <div class="card">2♥</div>
-                            <div class="card">7♦</div>
-                            <div class="card">Q♠</div>
-                            <div class="card hidden">?</div>
-                            <div class="card hidden">?</div>
+                    <div class="cards-display">
+                        <div class="community-cards">
+                            <h3>Board</h3>
+                            <div class="cards" id="community-cards">
+                                <div class="card">2♥</div>
+                                <div class="card">7♦</div>
+                                <div class="card">Q♠</div>
+                                <div class="card hidden">?</div>
+                                <div class="card hidden">?</div>
+                            </div>
                         </div>
+                        
+                        <div class="hero-cards">
+                            <h3>Your Cards</h3>
+                            <div class="cards" id="hero-cards">
+                                <div class="card">A♠</div>
+                                <div class="card">K♣</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-section">
+                    <h2>Your Estimates</h2>
+                    
+                    <div class="slider-group">
+                        <label for="pot-odds">Pot Odds (%)</label>
+                        <input type="range" id="pot-odds" min="0" max="100" value="50">
+                        <span class="value" id="pot-odds-value">50%</span>
+                    </div>
+
+                    <div class="slider-group">
+                        <label for="equity">Your Equity (%)</label>
+                        <input type="range" id="equity" min="0" max="100" value="50">
+                        <span class="value" id="equity-value">50%</span>
+                    </div>
+
+                    <div class="slider-group">
+                        <label for="bluff-rate">Villain's Profitable Bluff Rate (%)</label>
+                        <input type="range" id="bluff-rate" min="0" max="100" value="50">
+                        <span class="value" id="bluff-rate-value">50%</span>
+                    </div>
+
+                    <div class="slider-group">
+                        <label for="implied-odds">Implied Odds (%)</label>
+                        <input type="range" id="implied-odds" min="0" max="100" value="50">
+                        <span class="value" id="implied-odds-value">50%</span>
+                    </div>
+
+                    <div class="slider-group">
+                        <label for="reverse-implied">Reverse Implied Odds (%)</label>
+                        <input type="range" id="reverse-implied" min="0" max="100" value="50">
+                        <span class="value" id="reverse-implied-value">50%</span>
+                    </div>
+
+                    <div class="button-group">
+                        <button id="submit-answer" class="primary-button">
+                            <span class="material-symbols-outlined">check</span>
+                            Submit Answer
+                        </button>
+                        <button id="new-hand" class="secondary-button">
+                            <span class="material-symbols-outlined">refresh</span>
+                            New Hand
+                        </button>
                     </div>
                 </div>
             </div>
 
-            <div class="input-section">
-                <h2>Your Estimates</h2>
+            <!-- Calculator Mode -->
+            <div id="calculator-section" class="section">
+                <div class="calculator-input">
+                    <h2>Poker Calculator</h2>
+                    <p class="subtitle">Input a custom situation to calculate odds</p>
+                    
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="calc-stage">Game Stage</label>
+                            <select id="calc-stage">
+                                <option value="flop">Flop</option>
+                                <option value="turn">Turn</option>
+                                <option value="river">River</option>
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="calc-pot-size">Pot Size ($)</label>
+                            <input type="number" id="calc-pot-size" value="100" min="1">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="calc-bet-size">Bet Size ($)</label>
+                            <input type="number" id="calc-bet-size" value="50" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="card-input">
+                        <h3>Your Cards</h3>
+                        <div class="card-selector">
+                            <select id="hero-card1-rank">
+                                <option value="">-</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="T">T</option>
+                                <option value="J">J</option>
+                                <option value="Q">Q</option>
+                                <option value="K">K</option>
+                                <option value="A">A</option>
+                            </select>
+                            <select id="hero-card1-suit">
+                                <option value="">-</option>
+                                <option value="♠">♠</option>
+                                <option value="♥">♥</option>
+                                <option value="♦">♦</option>
+                                <option value="♣">♣</option>
+                            </select>
+                            <select id="hero-card2-rank">
+                                <option value="">-</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="T">T</option>
+                                <option value="J">J</option>
+                                <option value="Q">Q</option>
+                                <option value="K">K</option>
+                                <option value="A">A</option>
+                            </select>
+                            <select id="hero-card2-suit">
+                                <option value="">-</option>
+                                <option value="♠">♠</option>
+                                <option value="♥">♥</option>
+                                <option value="♦">♦</option>
+                                <option value="♣">♣</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="card-input">
+                        <h3>Board Cards</h3>
+                        <div class="board-selector">
+                            <!-- Flop -->
+                            <div class="board-card">
+                                <select id="board-card1-rank">
+                                    <option value="">-</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="T">T</option>
+                                    <option value="J">J</option>
+                                    <option value="Q">Q</option>
+                                    <option value="K">K</option>
+                                    <option value="A">A</option>
+                                </select>
+                                <select id="board-card1-suit">
+                                    <option value="">-</option>
+                                    <option value="♠">♠</option>
+                                    <option value="♥">♥</option>
+                                    <option value="♦">♦</option>
+                                    <option value="♣">♣</option>
+                                </select>
+                            </div>
+                            <div class="board-card">
+                                <select id="board-card2-rank">
+                                    <option value="">-</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="T">T</option>
+                                    <option value="J">J</option>
+                                    <option value="Q">Q</option>
+                                    <option value="K">K</option>
+                                    <option value="A">A</option>
+                                </select>
+                                <select id="board-card2-suit">
+                                    <option value="">-</option>
+                                    <option value="♠">♠</option>
+                                    <option value="♥">♥</option>
+                                    <option value="♦">♦</option>
+                                    <option value="♣">♣</option>
+                                </select>
+                            </div>
+                            <div class="board-card">
+                                <select id="board-card3-rank">
+                                    <option value="">-</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="T">T</option>
+                                    <option value="J">J</option>
+                                    <option value="Q">Q</option>
+                                    <option value="K">K</option>
+                                    <option value="A">A</option>
+                                </select>
+                                <select id="board-card3-suit">
+                                    <option value="">-</option>
+                                    <option value="♠">♠</option>
+                                    <option value="♥">♥</option>
+                                    <option value="♦">♦</option>
+                                    <option value="♣">♣</option>
+                                </select>
+                            </div>
+                            <!-- Turn -->
+                            <div class="board-card turn-river" id="turn-card">
+                                <select id="board-card4-rank">
+                                    <option value="">-</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="T">T</option>
+                                    <option value="J">J</option>
+                                    <option value="Q">Q</option>
+                                    <option value="K">K</option>
+                                    <option value="A">A</option>
+                                </select>
+                                <select id="board-card4-suit">
+                                    <option value="">-</option>
+                                    <option value="♠">♠</option>
+                                    <option value="♥">♥</option>
+                                    <option value="♦">♦</option>
+                                    <option value="♣">♣</option>
+                                </select>
+                            </div>
+                            <!-- River -->
+                            <div class="board-card turn-river" id="river-card">
+                                <select id="board-card5-rank">
+                                    <option value="">-</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="T">T</option>
+                                    <option value="J">J</option>
+                                    <option value="Q">Q</option>
+                                    <option value="K">K</option>
+                                    <option value="A">A</option>
+                                </select>
+                                <select id="board-card5-suit">
+                                    <option value="">-</option>
+                                    <option value="♠">♠</option>
+                                    <option value="♥">♥</option>
+                                    <option value="♦">♦</option>
+                                    <option value="♣">♣</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button id="calculate-odds" class="primary-button">
+                        <span class="material-symbols-outlined">calculate</span>
+                        Calculate Odds
+                    </button>
+                </div>
                 
-                <div class="slider-group">
-                    <label for="pot-odds">Pot Odds (%)</label>
-                    <input type="range" id="pot-odds" min="0" max="100" value="50">
-                    <span class="value" id="pot-odds-value">50%</span>
+                <div class="calculator-results" id="calc-results" style="display: none;">
+                    <h3>Results</h3>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="result-label">Pot Odds</span>
+                            <span class="result-value" id="calc-pot-odds">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Your Equity</span>
+                            <span class="result-value" id="calc-equity">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Profitable Bluff Rate</span>
+                            <span class="result-value" id="calc-bluff-rate">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">EV of Call</span>
+                            <span class="result-value" id="calc-ev">-</span>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="slider-group">
-                    <label for="equity">Your Equity (%)</label>
-                    <input type="range" id="equity" min="0" max="100" value="50">
-                    <span class="value" id="equity-value">50%</span>
-                </div>
-
-                <div class="slider-group">
-                    <label for="bluff-rate">Villain's Profitable Bluff Rate (%)</label>
-                    <input type="range" id="bluff-rate" min="0" max="100" value="50">
-                    <span class="value" id="bluff-rate-value">50%</span>
-                </div>
-
-                <div class="slider-group">
-                    <label for="implied-odds">Implied Odds (%)</label>
-                    <input type="range" id="implied-odds" min="0" max="100" value="50">
-                    <span class="value" id="implied-odds-value">50%</span>
-                </div>
-
-                <div class="slider-group">
-                    <label for="reverse-implied">Reverse Implied Odds (%)</label>
-                    <input type="range" id="reverse-implied" min="0" max="100" value="50">
-                    <span class="value" id="reverse-implied-value">50%</span>
-                </div>
-
-                <button id="submit-answer">Submit Answer</button>
-                <button id="new-hand">New Hand</button>
             </div>
         </div>
 
@@ -121,5 +410,17 @@
     </div>
 
     <script src="oddsQuiz.js"></script>
+    <script>
+        // Register service worker for PWA
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('SW registered: ', registration);
+                })
+                .catch(registrationError => {
+                    console.log('SW registration failed: ', registrationError);
+                });
+        }
+    </script>
 </body>
 </html>
