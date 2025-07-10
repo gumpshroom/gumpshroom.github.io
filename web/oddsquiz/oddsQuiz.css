@@ -607,6 +607,41 @@ header p {
   transform: translateY(-2px) scale(1.04);
 }
 
+/* Style select dropdowns for calculator mode */
+input[type="number"],
+select {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--md-sys-color-outline);
+  background: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 16px;
+  font-family: var(--md-sys-typescale-body-large-font);
+  margin-bottom: 8px;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+  box-shadow: none;
+}
+input[type="number"]:focus,
+select:focus {
+  border: 2px solid var(--md-sys-color-primary);
+  background: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+}
+
+/* Dark mode for dropdowns */
+[data-theme="dark"] input[type="number"],
+[data-theme="dark"] select {
+  background: #222;
+  color: var(--md-sys-color-on-surface);
+  border: 1px solid var(--md-sys-color-outline-variant);
+}
+[data-theme="dark"] input[type="number"]:focus,
+[data-theme="dark"] select:focus {
+  background: #181028;
+  border: 2px solid var(--md-sys-color-primary);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .container {
