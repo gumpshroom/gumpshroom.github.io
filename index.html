@@ -1,1 +1,384 @@
-<script>window.location.replace("./web/searcher.html")</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gumpshroom's Portfolio</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Portfolio of web tools and projects hosted on GitHub Pages">
+    <meta name="theme-color" content="#6750a4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Portfolio">
+    <meta name="msapplication-TileColor" content="#6750a4">
+    
+    <!-- Material Design 3 Icons and Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Material Design 3 CSS Custom Properties */
+        :root {
+          /* Light Theme Colors */
+          --md-sys-color-primary: #6750a4;
+          --md-sys-color-on-primary: #ffffff;
+          --md-sys-color-primary-container: #eaddff;
+          --md-sys-color-on-primary-container: #21005d;
+          
+          --md-sys-color-secondary: #625b71;
+          --md-sys-color-on-secondary: #ffffff;
+          --md-sys-color-secondary-container: #e8def8;
+          --md-sys-color-on-secondary-container: #1d192b;
+          
+          --md-sys-color-tertiary: #7d5260;
+          --md-sys-color-on-tertiary: #ffffff;
+          --md-sys-color-tertiary-container: #ffd8e4;
+          --md-sys-color-on-tertiary-container: #31111d;
+          
+          --md-sys-color-surface: #fffbfe;
+          --md-sys-color-on-surface: #1c1b1f;
+          --md-sys-color-surface-variant: #e7e0ec;
+          --md-sys-color-on-surface-variant: #49454f;
+          
+          --md-sys-color-background: #fffbfe;
+          --md-sys-color-on-background: #1c1b1f;
+          
+          --md-sys-color-outline: #79747e;
+          --md-sys-color-outline-variant: #cac4d0;
+          
+          --md-sys-color-error: #ba1a1a;
+          --md-sys-color-on-error: #ffffff;
+          --md-sys-color-error-container: #ffdad6;
+          --md-sys-color-on-error-container: #410002;
+          
+          /* Shadow */
+          --md-sys-elevation-shadow: rgba(0, 0, 0, 0.2);
+          
+          /* Typography */
+          --md-sys-typescale-display-large-font: 'Roboto';
+          --md-sys-typescale-display-large-size: 57px;
+          --md-sys-typescale-display-large-weight: 400;
+          --md-sys-typescale-display-large-line-height: 64px;
+          
+          --md-sys-typescale-headline-large-font: 'Roboto';
+          --md-sys-typescale-headline-large-size: 32px;
+          --md-sys-typescale-headline-large-weight: 400;
+          --md-sys-typescale-headline-large-line-height: 40px;
+          
+          --md-sys-typescale-title-large-font: 'Roboto';
+          --md-sys-typescale-title-large-size: 22px;
+          --md-sys-typescale-title-large-weight: 400;
+          --md-sys-typescale-title-large-line-height: 28px;
+          
+          --md-sys-typescale-body-large-font: 'Roboto';
+          --md-sys-typescale-body-large-size: 16px;
+          --md-sys-typescale-body-large-weight: 400;
+          --md-sys-typescale-body-large-line-height: 24px;
+          
+          --md-sys-typescale-label-large-font: 'Roboto';
+          --md-sys-typescale-label-large-size: 14px;
+          --md-sys-typescale-label-large-weight: 500;
+          --md-sys-typescale-label-large-line-height: 20px;
+        }
+
+        /* Dark Theme Colors */
+        [data-theme="dark"] {
+          --md-sys-color-primary: #d0bcff;
+          --md-sys-color-on-primary: #371e73;
+          --md-sys-color-primary-container: #4f378b;
+          --md-sys-color-on-primary-container: #eaddff;
+          
+          --md-sys-color-secondary: #ccc2dc;
+          --md-sys-color-on-secondary: #332d41;
+          --md-sys-color-secondary-container: #4a4458;
+          --md-sys-color-on-secondary-container: #e8def8;
+          
+          --md-sys-color-tertiary: #efb8c8;
+          --md-sys-color-on-tertiary: #492532;
+          --md-sys-color-tertiary-container: #633b48;
+          --md-sys-color-on-tertiary-container: #ffd8e4;
+          
+          --md-sys-color-surface: #10090d;
+          --md-sys-color-on-surface: #e6e1e5;
+          --md-sys-color-surface-variant: #49454f;
+          --md-sys-color-on-surface-variant: #cac4d0;
+          
+          --md-sys-color-background: #10090d;
+          --md-sys-color-on-background: #e6e1e5;
+          
+          --md-sys-color-outline: #938f99;
+          --md-sys-color-outline-variant: #49454f;
+          
+          --md-sys-color-error: #ffb4ab;
+          --md-sys-color-on-error: #690005;
+          --md-sys-color-error-container: #93000a;
+          --md-sys-color-on-error-container: #ffdad6;
+        }
+
+        /* Reset and Base Styles */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: var(--md-sys-typescale-body-large-font);
+          font-size: var(--md-sys-typescale-body-large-size);
+          font-weight: var(--md-sys-typescale-body-large-weight);
+          line-height: var(--md-sys-typescale-body-large-line-height);
+          background-color: var(--md-sys-color-background);
+          color: var(--md-sys-color-on-background);
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 24px;
+          min-height: 100vh;
+        }
+
+        header {
+          text-align: center;
+          margin-bottom: 48px;
+        }
+
+        .header-controls {
+          display: flex;
+          justify-content: flex-end;
+          margin-bottom: 24px;
+        }
+
+        .icon-button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 12px;
+          border-radius: 50%;
+          color: var(--md-sys-color-on-surface-variant);
+          transition: all 0.3s ease;
+        }
+
+        .icon-button:hover {
+          background-color: var(--md-sys-color-outline-variant);
+        }
+
+        .icon-button .material-symbols-outlined {
+          font-size: 24px;
+        }
+
+        h1 {
+          font-family: var(--md-sys-typescale-headline-large-font);
+          font-size: var(--md-sys-typescale-headline-large-size);
+          font-weight: var(--md-sys-typescale-headline-large-weight);
+          line-height: var(--md-sys-typescale-headline-large-line-height);
+          color: var(--md-sys-color-on-background);
+          margin-bottom: 8px;
+        }
+
+        .subtitle {
+          font-size: var(--md-sys-typescale-body-large-size);
+          color: var(--md-sys-color-on-surface-variant);
+          margin-bottom: 24px;
+        }
+
+        .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 24px;
+          margin-top: 32px;
+        }
+
+        .project-card {
+          background-color: var(--md-sys-color-surface);
+          border: 1px solid var(--md-sys-color-outline-variant);
+          border-radius: 16px;
+          padding: 24px;
+          transition: all 0.3s ease;
+          cursor: pointer;
+          text-decoration: none;
+          color: inherit;
+        }
+
+        .project-card:hover {
+          box-shadow: 0 4px 12px var(--md-sys-elevation-shadow);
+          transform: translateY(-2px);
+        }
+
+        .project-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 56px;
+          height: 56px;
+          background-color: var(--md-sys-color-primary-container);
+          color: var(--md-sys-color-on-primary-container);
+          border-radius: 28px;
+          margin-bottom: 16px;
+        }
+
+        .project-icon .material-symbols-outlined {
+          font-size: 32px;
+        }
+
+        .project-title {
+          font-family: var(--md-sys-typescale-title-large-font);
+          font-size: var(--md-sys-typescale-title-large-size);
+          font-weight: var(--md-sys-typescale-title-large-weight);
+          line-height: var(--md-sys-typescale-title-large-line-height);
+          color: var(--md-sys-color-on-surface);
+          margin-bottom: 8px;
+        }
+
+        .project-description {
+          color: var(--md-sys-color-on-surface-variant);
+          margin-bottom: 16px;
+        }
+
+        .project-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          color: var(--md-sys-color-primary);
+          font-weight: 500;
+          text-decoration: none;
+        }
+
+        .project-link .material-symbols-outlined {
+          font-size: 18px;
+        }
+
+        footer {
+          text-align: center;
+          margin-top: 64px;
+          padding: 24px;
+          color: var(--md-sys-color-on-surface-variant);
+          border-top: 1px solid var(--md-sys-color-outline-variant);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+          .container {
+            padding: 16px;
+          }
+          
+          .projects-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+          
+          h1 {
+            font-size: 28px;
+            line-height: 36px;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-controls">
+                <button id="theme-toggle" class="icon-button" title="Toggle theme">
+                    <span class="material-symbols-outlined">dark_mode</span>
+                </button>
+            </div>
+            <h1>Gumpshroom's Portfolio</h1>
+            <p class="subtitle">Collection of web tools and projects hosted on GitHub Pages</p>
+        </header>
+
+        <main>
+            <div class="projects-grid">
+                <a href="oddsQuiz.html" class="project-card">
+                    <div class="project-icon">
+                        <span class="material-symbols-outlined">casino</span>
+                    </div>
+                    <h2 class="project-title">Texas Hold'em Odds Quiz</h2>
+                    <p class="project-description">
+                        Test your poker odds calculation skills with this interactive quiz and calculator. 
+                        Features both quiz mode for learning and calculator mode for practice.
+                    </p>
+                    <div class="project-link">
+                        <span>Open Tool</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </div>
+                </a>
+
+                <a href="web/searcher.html" class="project-card">
+                    <div class="project-icon">
+                        <span class="material-symbols-outlined">search</span>
+                    </div>
+                    <h2 class="project-title">PDF Search Tool</h2>
+                    <p class="project-description">
+                        Freaky PDF search tool that allows you to import and search through PDF documents. 
+                        Works with both local files and URLs with serverless architecture.
+                    </p>
+                    <div class="project-link">
+                        <span>Open Tool</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </div>
+                </a>
+
+                <a href="web/viewer.html" class="project-card">
+                    <div class="project-icon">
+                        <span class="material-symbols-outlined">picture_as_pdf</span>
+                    </div>
+                    <h2 class="project-title">PDF Viewer</h2>
+                    <p class="project-description">
+                        Full-featured PDF viewer built on PDF.js with support for annotations, 
+                        text selection, zooming, and navigation.
+                    </p>
+                    <div class="project-link">
+                        <span>Open Tool</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </div>
+                </a>
+
+                <a href="web/simpleviewer.html" class="project-card">
+                    <div class="project-icon">
+                        <span class="material-symbols-outlined">description</span>
+                    </div>
+                    <h2 class="project-title">Simple PDF Viewer</h2>
+                    <p class="project-description">
+                        Lightweight PDF viewer with essential viewing capabilities. 
+                        Built with PDF.js components for fast and reliable rendering.
+                    </p>
+                    <div class="project-link">
+                        <span>Open Tool</span>
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </div>
+                </a>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with Material Design 3 • Hosted on GitHub Pages</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('.material-symbols-outlined');
+        
+        // Check for saved theme or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            themeIcon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+        }
+    </script>
+</body>
+</html>
