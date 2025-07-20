@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hyprox1413 Project Showcase & Trivia</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Comprehensive showcase of hyprox1413's GitHub projects with interactive trivia">
+    <meta name="theme-color" content="#6750a4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="hyprox1413 Showcase">
+    <meta name="msapplication-TileColor" content="#6750a4">
+    
+    <!-- Material Design 3 Icons and Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Material Design 3 CSS Custom Properties */
+        :root {
+          /* Light Theme Colors */
+          --md-sys-color-primary: #6750a4;
+          --md-sys-color-on-primary: #ffffff;
+          --md-sys-color-primary-container: #eaddff;
+          --md-sys-color-on-primary-container: #21005d;
+          
+          --md-sys-color-secondary: #625b71;
+          --md-sys-color-on-secondary: #ffffff;
+          --md-sys-color-secondary-container: #e8def8;
+          --md-sys-color-on-secondary-container: #1d192b;
+          
+          --md-sys-color-tertiary: #7d5260;
+          --md-sys-color-on-tertiary: #ffffff;
+          --md-sys-color-tertiary-container: #ffd8e4;
+          --md-sys-color-on-tertiary-container: #31111d;
+          
+          --md-sys-color-surface: #fffbfe;
+          --md-sys-color-on-surface: #1c1b1f;
+          --md-sys-color-surface-variant: #e7e0ec;
+          --md-sys-color-on-surface-variant: #49454f;
+          
+          --md-sys-color-background: #fffbfe;
+          --md-sys-color-on-background: #1c1b1f;
+          
+          --md-sys-color-outline: #79747e;
+          --md-sys-color-outline-variant: #cac4d0;
+          
+          --md-sys-color-error: #ba1a1a;
+          --md-sys-color-on-error: #ffffff;
+          --md-sys-color-error-container: #ffdad6;
+          --md-sys-color-on-error-container: #410002;
+          
+          /* Shadow */
+          --md-sys-elevation-shadow: rgba(0, 0, 0, 0.2);
+          
+          /* Typography */
+          --md-sys-typescale-display-large-font: 'Roboto';
+          --md-sys-typescale-display-large-size: 57px;
+          --md-sys-typescale-display-large-weight: 400;
+          --md-sys-typescale-display-large-line-height: 64px;
+          
+          --md-sys-typescale-headline-large-font: 'Roboto';
+          --md-sys-typescale-headline-large-size: 32px;
+          --md-sys-typescale-headline-large-weight: 400;
+          --md-sys-typescale-headline-large-line-height: 40px;
+          
+          --md-sys-typescale-title-large-font: 'Roboto';
+          --md-sys-typescale-title-large-size: 22px;
+          --md-sys-typescale-title-large-weight: 400;
+          --md-sys-typescale-title-large-line-height: 28px;
+          
+          --md-sys-typescale-body-large-font: 'Roboto';
+          --md-sys-typescale-body-large-size: 16px;
+          --md-sys-typescale-body-large-weight: 400;
+          --md-sys-typescale-body-large-line-height: 24px;
+          
+          --md-sys-typescale-label-large-font: 'Roboto';
+          --md-sys-typescale-label-large-size: 14px;
+          --md-sys-typescale-label-large-weight: 500;
+          --md-sys-typescale-label-large-line-height: 20px;
+        }
+
+        /* Dark Theme Colors */
+        [data-theme="dark"] {
+          --md-sys-color-primary: #d0bcff;
+          --md-sys-color-on-primary: #371e73;
+          --md-sys-color-primary-container: #4f378b;
+          --md-sys-color-on-primary-container: #eaddff;
+          
+          --md-sys-color-secondary: #ccc2dc;
+          --md-sys-color-on-secondary: #332d41;
+          --md-sys-color-secondary-container: #4a4458;
+          --md-sys-color-on-secondary-container: #e8def8;
+          
+          --md-sys-color-tertiary: #efb8c8;
+          --md-sys-color-on-tertiary: #492532;
+          --md-sys-color-tertiary-container: #633b48;
+          --md-sys-color-on-tertiary-container: #ffd8e4;
+          
+          --md-sys-color-surface: #10090d;
+          --md-sys-color-on-surface: #e6e1e5;
+          --md-sys-color-surface-variant: #49454f;
+          --md-sys-color-on-surface-variant: #cac4d0;
+          
+          --md-sys-color-background: #10090d;
+          --md-sys-color-on-background: #e6e1e5;
+          
+          --md-sys-color-outline: #938f99;
+          --md-sys-color-outline-variant: #49454f;
+          
+          --md-sys-color-error: #ffb4ab;
+          --md-sys-color-on-error: #690005;
+          --md-sys-color-error-container: #93000a;
+          --md-sys-color-on-error-container: #ffdad6;
+        }
+
+        /* Reset and Base Styles */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: var(--md-sys-typescale-body-large-font);
+          font-size: var(--md-sys-typescale-body-large-size);
+          font-weight: var(--md-sys-typescale-body-large-weight);
+          line-height: var(--md-sys-typescale-body-large-line-height);
+          background-color: var(--md-sys-color-background);
+          color: var(--md-sys-color-on-background);
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 24px;
+          min-height: 100vh;
+        }
+
+        header {
+          text-align: center;
+          margin-bottom: 48px;
+        }
+
+        .header-controls {
+          display: flex;
+          justify-content: flex-end;
+          margin-bottom: 24px;
+        }
+
+        .icon-button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 12px;
+          border-radius: 50%;
+          color: var(--md-sys-color-on-surface-variant);
+          transition: all 0.3s ease;
+        }
+
+        .icon-button:hover {
+          background-color: var(--md-sys-color-outline-variant);
+        }
+
+        .icon-button .material-symbols-outlined {
+          font-size: 24px;
+        }
+
+        h1 {
+          font-family: var(--md-sys-typescale-headline-large-font);
+          font-size: var(--md-sys-typescale-headline-large-size);
+          font-weight: var(--md-sys-typescale-headline-large-weight);
+          line-height: var(--md-sys-typescale-headline-large-line-height);
+          color: var(--md-sys-color-on-background);
+          margin-bottom: 8px;
+        }
+
+        .subtitle {
+          font-size: var(--md-sys-typescale-body-large-size);
+          color: var(--md-sys-color-on-surface-variant);
+          margin-bottom: 24px;
+        }
+
+        .navigation {
+          display: flex;
+          justify-content: center;
+          gap: 16px;
+          margin-bottom: 32px;
+        }
+
+        .nav-button {
+          padding: 12px 24px;
+          border: 1px solid var(--md-sys-color-outline);
+          background-color: var(--md-sys-color-surface);
+          color: var(--md-sys-color-on-surface);
+          border-radius: 20px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-family: var(--md-sys-typescale-label-large-font);
+          font-size: var(--md-sys-typescale-label-large-size);
+          font-weight: var(--md-sys-typescale-label-large-weight);
+        }
+
+        .nav-button:hover {
+          background-color: var(--md-sys-color-primary-container);
+          color: var(--md-sys-color-on-primary-container);
+        }
+
+        .nav-button.active {
+          background-color: var(--md-sys-color-primary);
+          color: var(--md-sys-color-on-primary);
+          border-color: var(--md-sys-color-primary);
+        }
+
+        .section {
+          display: none;
+        }
+
+        .section.active {
+          display: block;
+        }
+
+        .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 24px;
+          margin-top: 32px;
+        }
+
+        .project-card {
+          background-color: var(--md-sys-color-surface);
+          border: 1px solid var(--md-sys-color-outline-variant);
+          border-radius: 16px;
+          padding: 24px;
+          transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+          box-shadow: 0 4px 12px var(--md-sys-elevation-shadow);
+          transform: translateY(-2px);
+        }
+
+        .project-header {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          margin-bottom: 16px;
+        }
+
+        .project-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 48px;
+          height: 48px;
+          background-color: var(--md-sys-color-primary-container);
+          color: var(--md-sys-color-on-primary-container);
+          border-radius: 24px;
+        }
+
+        .project-icon .material-symbols-outlined {
+          font-size: 24px;
+        }
+
+        .project-title {
+          font-family: var(--md-sys-typescale-title-large-font);
+          font-size: var(--md-sys-typescale-title-large-size);
+          font-weight: var(--md-sys-typescale-title-large-weight);
+          line-height: var(--md-sys-typescale-title-large-line-height);
+          color: var(--md-sys-color-on-surface);
+          margin-bottom: 4px;
+        }
+
+        .project-language {
+          font-size: 12px;
+          color: var(--md-sys-color-on-surface-variant);
+          background-color: var(--md-sys-color-secondary-container);
+          color: var(--md-sys-color-on-secondary-container);
+          padding: 4px 8px;
+          border-radius: 8px;
+          display: inline-block;
+          margin-bottom: 12px;
+        }
+
+        .project-description {
+          color: var(--md-sys-color-on-surface-variant);
+          margin-bottom: 16px;
+          line-height: 1.5;
+        }
+
+        .project-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          color: var(--md-sys-color-primary);
+          font-weight: 500;
+          text-decoration: none;
+        }
+
+        .project-link .material-symbols-outlined {
+          font-size: 18px;
+        }
+
+        .trivia-container {
+          background-color: var(--md-sys-color-surface);
+          border: 1px solid var(--md-sys-color-outline-variant);
+          border-radius: 16px;
+          padding: 32px;
+          text-align: center;
+        }
+
+        .question-card {
+          background-color: var(--md-sys-color-primary-container);
+          color: var(--md-sys-color-on-primary-container);
+          border-radius: 12px;
+          padding: 24px;
+          margin-bottom: 24px;
+        }
+
+        .question-text {
+          font-size: 18px;
+          font-weight: 500;
+          margin-bottom: 16px;
+        }
+
+        .answers-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 12px;
+          margin-bottom: 24px;
+        }
+
+        .answer-button {
+          padding: 12px 16px;
+          border: 1px solid var(--md-sys-color-outline);
+          background-color: var(--md-sys-color-surface);
+          color: var(--md-sys-color-on-surface);
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-align: left;
+        }
+
+        .answer-button:hover {
+          background-color: var(--md-sys-color-secondary-container);
+          color: var(--md-sys-color-on-secondary-container);
+        }
+
+        .answer-button.correct {
+          background-color: #4caf50;
+          color: white;
+          border-color: #4caf50;
+        }
+
+        .answer-button.incorrect {
+          background-color: var(--md-sys-color-error);
+          color: var(--md-sys-color-on-error);
+          border-color: var(--md-sys-color-error);
+        }
+
+        .trivia-controls {
+          display: flex;
+          justify-content: center;
+          gap: 16px;
+          margin-bottom: 16px;
+        }
+
+        .trivia-button {
+          padding: 12px 24px;
+          background-color: var(--md-sys-color-primary);
+          color: var(--md-sys-color-on-primary);
+          border: none;
+          border-radius: 20px;
+          cursor: pointer;
+          font-weight: 500;
+          transition: all 0.3s ease;
+        }
+
+        .trivia-button:hover {
+          background-color: var(--md-sys-color-primary-container);
+          color: var(--md-sys-color-on-primary-container);
+        }
+
+        .score-display {
+          font-size: 18px;
+          font-weight: 500;
+          color: var(--md-sys-color-primary);
+          margin-bottom: 16px;
+        }
+
+        .family-guy-reference {
+          background-color: var(--md-sys-color-tertiary-container);
+          color: var(--md-sys-color-on-tertiary-container);
+          padding: 12px;
+          border-radius: 8px;
+          margin: 16px 0;
+          font-style: italic;
+          border-left: 4px solid var(--md-sys-color-tertiary);
+        }
+
+        .cp-reference {
+          background-color: var(--md-sys-color-secondary-container);
+          color: var(--md-sys-color-on-secondary-container);
+          padding: 8px 12px;
+          border-radius: 8px;
+          margin: 8px 0;
+          font-size: 14px;
+          display: inline-block;
+        }
+
+        footer {
+          text-align: center;
+          margin-top: 64px;
+          padding: 24px;
+          color: var(--md-sys-color-on-surface-variant);
+          border-top: 1px solid var(--md-sys-color-outline-variant);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+          .container {
+            padding: 16px;
+          }
+          
+          .projects-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+          }
+          
+          .answers-grid {
+            grid-template-columns: 1fr;
+          }
+          
+          .navigation {
+            flex-direction: column;
+            align-items: center;
+          }
+          
+          h1 {
+            font-size: 28px;
+            line-height: 36px;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-controls">
+                <button id="theme-toggle" class="icon-button" title="Toggle theme">
+                    <span class="material-symbols-outlined">dark_mode</span>
+                </button>
+            </div>
+            <h1>hyprox1413 Project Showcase</h1>
+            <p class="subtitle">Like Peter Griffin trying to explain quantum mechanics, this page attempts to document coding projects with questionable success</p>
+            
+            <div class="family-guy-reference">
+                💡 "You know what really grinds my gears? When people don't appreciate the O(log n) beauty of a well-balanced binary search tree!" - Peter Griffin, probably
+            </div>
+        </header>
+
+        <nav class="navigation">
+            <button class="nav-button active" onclick="showSection('projects')">
+                <span class="material-symbols-outlined">code</span>
+                Projects
+            </button>
+            <button class="nav-button" onclick="showSection('trivia')">
+                <span class="material-symbols-outlined">quiz</span>
+                Trivia Game
+            </button>
+        </nav>
+
+        <main>
+            <div id="projects" class="section active">
+                <div class="cp-reference">
+                    🏆 Time Complexity Analysis: Reading this page is O(n) where n = your patience level
+                </div>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">psychology</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">Instrument-Differentiation-Autoencoding</h3>
+                                <span class="project-language">Python</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A machine learning project that probably needs a good name (according to the description). Like Stewie's time machine, it works but nobody knows exactly how. Uses deep learning to differentiate between musical instruments with autoencoders, because apparently regular human ears weren't cutting it.
+                        </p>
+                        <div class="family-guy-reference">
+                            🎵 "This is worse than the time I tried to teach Brian about backpropagation"
+                        </div>
+                        <a href="https://github.com/hyprox1413/Instrument-Differentiation-Autoencoding" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">graphic_eq</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">RingVisualizer</h3>
+                                <span class="project-language">Processing</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A music visualizer using Minim that creates trippy ring patterns. Comes with two original songs, free-of-charge! Like Quagmire's piano playing, it's surprisingly sophisticated. Supports .wav files only because apparently we're still living in the early 2000s.
+                        </p>
+                        <div class="cp-reference">
+                            ⚡ Fast Fourier Transform: Because regular transforms are for peasants
+                        </div>
+                        <a href="https://github.com/hyprox1413/RingVisualizer" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">memory</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">DeepC</h3>
+                                <span class="project-language">C</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Deep Learning in C from scratch. Because Python is for weaklings and TensorFlow is too mainstream. It's like Cleveland trying to be cool - technically impressive but unnecessarily painful. Features neural networks built with the raw power of malloc() and free().
+                        </p>
+                        <div class="family-guy-reference">
+                            🔧 "You think that's bad? Remember when I implemented gradient descent without any libraries?" - Cleveland Brown, definitely
+                        </div>
+                        <div class="cp-reference">
+                            🧠 Space Complexity: O(your sanity declining)
+                        </div>
+                        <a href="https://github.com/hyprox1413/DeepC" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">sports_esports</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">Endless-Bullet-Nightmare</h3>
+                                <span class="project-language">Processing</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A simple bullet-hell game where you right-click to add enemies (masochistic much?). Left click for powerups with limited supply. Like Peter's fights with the giant chicken, it's endless and slightly ridiculous. Stand near enemies to disable them because apparently proximity = friendship.
+                        </p>
+                        <div class="family-guy-reference">
+                            🐔 "This reminds me of my epic battles with Ernie the Giant Chicken, except with more bullets and less property damage" - Peter Griffin
+                        </div>
+                        <a href="https://github.com/hyprox1413/Endless-Bullet-Nightmare" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">grid_view</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">IsoGrid</h3>
+                                <span class="project-language">JavaScript</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            An isometric grid art tool for creating pixel-perfect 3D-ish artwork. Like Stewie's blueprints for world domination, but with more artistic flair and less global conquest. Licensed under LGPL-2.1 because even art needs legal frameworks.
+                        </p>
+                        <div class="cp-reference">
+                            📐 2D Array Manipulation: Because 1D arrays are for linear thinkers
+                        </div>
+                        <a href="https://github.com/hyprox1413/IsoGrid" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">compress</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">pxml-hybrid-compression</h3>
+                                <span class="project-language">Python</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A mysterious compression project with no description - like Meg's personality, it's there but nobody talks about it. Probably involves XML and hybrid compression techniques, which sounds about as exciting as watching paint dry in Quahog.
+                        </p>
+                        <div class="family-guy-reference">
+                            🤐 "Shut up, Meg! Nobody asked about your compression algorithms!" - Peter Griffin
+                        </div>
+                        <a href="https://github.com/hyprox1413/pxml-hybrid-compression" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">waves</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">Wavelike</h3>
+                                <span class="project-language">Processing</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A small art project designed for frame-by-frame rendering to create smooth videos. Runs absurdly slow because it prioritizes beauty over speed - like Brian's novel writing process. Perfect for creating hypnotic wave patterns that probably induce seizures.
+                        </p>
+                        <div class="cp-reference">
+                            🎬 Frame Rate: O(geological time)
+                        </div>
+                        <a href="https://github.com/hyprox1413/Wavelike" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">celebration</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">Fireworks</h3>
+                                <span class="project-language">Processing</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Simulated fireworks with particle trails and standalone applications. Like the 4th of July episode where Peter accidentally burns down half of Quahog, except this is contained within your computer screen. Features realistic physics and pretty colors!
+                        </p>
+                        <div class="family-guy-reference">
+                            🎆 "This is almost as spectacular as the time I invented exploding toilet paper!" - Peter Griffin
+                        </div>
+                        <a href="https://github.com/hyprox1413/Fireworks" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">casino</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">Galton-Board</h3>
+                                <span class="project-language">Processing</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A physics simulation of a Galton Board (bean machine) that demonstrates probability distributions. Like watching Stewie's elaborate schemes fail in predictable ways, it's mathematically beautiful and oddly satisfying. Executables included for maximum convenience.
+                        </p>
+                        <div class="cp-reference">
+                            📊 Probability: Because random is just a state of mind
+                        </div>
+                        <a href="https://github.com/hyprox1413/Galton-Board" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">calendar_month</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">Existence-Reminder</h3>
+                                <span class="project-language">Processing</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Originally a digital journal with a calendar interface, now supports color-coding. Like Lois's attempts to organize the Griffin family schedule, it's well-intentioned but probably doomed to chaos. At least it reminds you that you exist!
+                        </p>
+                        <div class="family-guy-reference">
+                            📅 "Peter, you can't just write 'Beer Time' for every hour of the day!" - Lois Griffin
+                        </div>
+                        <a href="https://github.com/hyprox1413/Existence-Reminder" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">blur_on</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">The-Chaos-Game</h3>
+                                <span class="project-language">Processing</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            An implementation of the Chaos Game with videos showing different variations. Like trying to predict Peter's next ridiculous scheme, it's mathematically chaotic yet oddly predictable. Includes videos where the code was tweaked for different visual outputs.
+                        </p>
+                        <div class="cp-reference">
+                            🎲 Chaos Theory: When O(random) becomes surprisingly organized
+                        </div>
+                        <a href="https://github.com/hyprox1413/The-Chaos-Game" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">coronavirus</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">CoronaVisualizer</h3>
+                                <span class="project-language">Processing</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Effectively RingVisualizer with a fresh, trippy coat of paint. Like when the Griffin family got quarantined and went crazy, this project was born from pandemic-era creativity. Features psychedelic visuals that would make even Brian question reality.
+                        </p>
+                        <div class="family-guy-reference">
+                            🦠 "You know what's worse than social distancing? Having to explain algorithms to Peter" - Brian Griffin
+                        </div>
+                        <a href="https://github.com/hyprox1413/CoronaVisualizer" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">quiz</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">bb</h3>
+                                <span class="project-language">JavaScript</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A mysterious project with the most descriptive name since "Untitled-1.txt". Like Herbert's stories, it's short, cryptic, and leaves you with more questions than answers. The repository description is as helpful as Peter's driving instructions.
+                        </p>
+                        <div class="family-guy-reference">
+                            🤷‍♂️ "This is more mysterious than the time I found out what 'bb' actually stands for"
+                        </div>
+                        <a href="https://github.com/hyprox1413/bb" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">wallpaper</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">Penrose-Triangle-Wallpaper-Maker</h3>
+                                <span class="project-language">Processing</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Creates wallpapers overlaid with generated Penrose Triangle patterns. Like Stewie's impossible inventions, it creates optical illusions that shouldn't exist but somehow do. Simple to edit and customize, unlike Peter's thought process.
+                        </p>
+                        <div class="cp-reference">
+                            📐 Geometric Algorithms: Making impossible triangles since forever
+                        </div>
+                        <a href="https://github.com/hyprox1413/Penrose-Triangle-Wallpaper-Maker" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">school</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">nnWorkshop</h3>
+                                <span class="project-language">Python</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A guide repository for in-person neural network workshops using PyTorch. Like when Brian tried to teach the family about literature, it's educational content delivered with questionable confidence. Perfect for those who want to understand AI without the existential dread.
+                        </p>
+                        <div class="family-guy-reference">
+                            🎓 "Teaching neural networks is easier than explaining why Chris is the way he is" - Brian Griffin
+                        </div>
+                        <a href="https://github.com/hyprox1413/nnWorkshop" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">code_blocks</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">CCTemplates</h3>
+                                <span class="project-language">HTML</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            Competitive coding templates for quick contest setup. Like Peter's get-rich-quick schemes, these templates promise efficiency but probably lead to more confusion. Features algorithms optimized for speed-coding competitions and maximum caffeination.
+                        </p>
+                        <div class="cp-reference">
+                            🏃‍♂️ Template Repository: O(copy-paste) efficiency
+                        </div>
+                        <div class="family-guy-reference">
+                            💻 "You know what grinds my gears? People who don't use proper competitive programming templates!" - Peter Griffin's coding alter ego
+                        </div>
+                        <a href="https://github.com/hyprox1413/CCTemplates" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">psychology</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">ShadyDealer</h3>
+                                <span class="project-language">Python</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A fun project testing transformer decoders. Like Carter Pewterschmidt's business ventures, it's probably shady but technically sophisticated. Features cutting-edge AI that may or may not be planning world domination through natural language processing.
+                        </p>
+                        <div class="family-guy-reference">
+                            🎩 "This is shadier than the time I sold nuclear power plants to developing countries" - Carter Pewterschmidt
+                        </div>
+                        <a href="https://github.com/hyprox1413/ShadyDealer" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-icon">
+                                <span class="material-symbols-outlined">web</span>
+                            </div>
+                            <div>
+                                <h3 class="project-title">future-website</h3>
+                                <span class="project-language">JavaScript</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            A website project from the future (or at least that's what the name suggests). Like when Stewie traveled through time, this project exists in a temporal paradox where it's simultaneously a website and not a website until you observe it.
+                        </p>
+                        <div class="cp-reference">
+                            🚀 Future Tech Stack: Probably still using jQuery
+                        </div>
+                        <a href="https://github.com/hyprox1413/future-website" class="project-link">
+                            <span>View Repository</span>
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="trivia" class="section">
+                <div class="trivia-container">
+                    <h2>hyprox1413 Knowledge Trivia</h2>
+                    <p class="subtitle">Test your knowledge about hyprox1413's projects! Warning: May cause spontaneous algorithm optimization</p>
+                    
+                    <div class="family-guy-reference">
+                        🧠 "You know what's harder than this trivia? Understanding Meg's life choices!" - Peter Griffin
+                    </div>
+                    
+                    <div class="score-display" id="score">Score: 0/0</div>
+                    
+                    <div class="question-card" id="question-card" style="display: none;">
+                        <div class="question-text" id="question-text"></div>
+                        <div class="answers-grid" id="answers-grid"></div>
+                    </div>
+                    
+                    <div class="trivia-controls">
+                        <button class="trivia-button" id="start-trivia" onclick="startTrivia()">
+                            Start Trivia
+                        </button>
+                        <button class="trivia-button" id="next-question" onclick="nextQuestion()" style="display: none;">
+                            Next Question
+                        </button>
+                    </div>
+                    
+                    <div id="trivia-result" style="margin-top: 16px; font-weight: 500;"></div>
+                    
+                    <div class="cp-reference">
+                        🎯 Trivia Complexity: O(your procrastination level squared)
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with Material Design 3 & Questionable Humor • Not affiliated with Family Guy or actual competitive programming success</p>
+            <div class="family-guy-reference">
+                📺 "This page is brought to you by the letter 'P' for Programming and 'G' for 'Giggity Giggity Algorithm'" - Glenn Quagmire, tech recruiter
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('.material-symbols-outlined');
+        
+        // Check for saved theme or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            themeIcon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+        }
+
+        // Section navigation
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update nav buttons
+            const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(button => button.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Trivia game functionality
+        const triviaQuestions = [
+            {
+                question: "Which programming language does hyprox1413 use for deep learning from scratch?",
+                answers: ["Python", "C", "Java", "JavaScript"],
+                correct: 1,
+                funnyWrong: "Wrong! That's like asking Brian to write a romance novel - technically possible but unnecessarily painful!"
+            },
+            {
+                question: "What does the RingVisualizer project create?",
+                answers: ["Wedding rings", "Music visualizations", "Olympic rings", "Onion rings"],
+                correct: 1,
+                funnyWrong: "Nope! Although onion rings would be more useful than most visualizers, am I right?"
+            },
+            {
+                question: "How many original songs come with RingVisualizer?",
+                answers: ["1", "2", "3", "42"],
+                correct: 1,
+                funnyWrong: "Wrong! It's not 42, that's the answer to life, the universe, and everything - not music files!"
+            },
+            {
+                question: "What file format does RingVisualizer support?",
+                answers: [".mp3", ".wav", ".flac", ".midi"],
+                correct: 1,
+                funnyWrong: "Incorrect! It's .wav because apparently we're still living in the stone age of audio formats!"
+            },
+            {
+                question: "What happens when you stand near enemies in Endless-Bullet-Nightmare?",
+                answers: ["You die", "They get stronger", "They get disabled", "Nothing"],
+                correct: 2,
+                funnyWrong: "Wrong! It's like the power of friendship but with more bullets and less magical girls!"
+            },
+            {
+                question: "What license does IsoGrid use?",
+                answers: ["MIT", "GPL", "LGPL-2.1", "Apache"],
+                correct: 2,
+                funnyWrong: "Nope! Even art needs proper legal frameworks, unlike Peter's business ventures!"
+            },
+            {
+                question: "What makes Wavelike run absurdly slow?",
+                answers: ["Bad code", "Frame-by-frame rendering", "Too many loops", "Java"],
+                correct: 1,
+                funnyWrong: "Wrong! It prioritizes beauty over speed, like Brian's approach to literally everything!"
+            },
+            {
+                question: "What does the Galton Board demonstrate?",
+                answers: ["Gravity", "Probability distributions", "Chaos theory", "Murphy's Law"],
+                correct: 1,
+                funnyWrong: "Incorrect! Though Murphy's Law does explain most programming experiences!"
+            },
+            {
+                question: "What was Existence-Reminder originally created as?",
+                answers: ["A game", "A digital journal", "A calendar app", "A reminder app"],
+                correct: 1,
+                funnyWrong: "Wrong! It's for reminding you that you exist, unlike Meg's social presence!"
+            },
+            {
+                question: "Which project has the most mysterious name?",
+                answers: ["DeepC", "bb", "IsoGrid", "ShadyDealer"],
+                correct: 1,
+                funnyWrong: "Nope! 'bb' is more mysterious than Herbert's past!"
+            },
+            {
+                question: "What does CCTemplates stand for?",
+                answers: ["Cool Code Templates", "Competitive Coding Templates", "Creative Coding Templates", "Complicated Code Templates"],
+                correct: 1,
+                funnyWrong: "Wrong! It's for competitive coding, because regular coding isn't stressful enough!"
+            },
+            {
+                question: "What does ShadyDealer test?",
+                answers: ["Card games", "Transformer decoders", "E-commerce", "Cryptocurrency"],
+                correct: 1,
+                funnyWrong: "Incorrect! It's about AI transformers, not the robot kind or electrical kind!"
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let gameActive = false;
+
+        function startTrivia() {
+            currentQuestionIndex = 0;
+            score = 0;
+            gameActive = true;
+            
+            document.getElementById('start-trivia').style.display = 'none';
+            document.getElementById('question-card').style.display = 'block';
+            document.getElementById('trivia-result').textContent = '';
+            
+            updateScore();
+            showQuestion();
+        }
+
+        function showQuestion() {
+            if (currentQuestionIndex >= triviaQuestions.length) {
+                endGame();
+                return;
+            }
+
+            const question = triviaQuestions[currentQuestionIndex];
+            document.getElementById('question-text').textContent = question.question;
+            
+            const answersGrid = document.getElementById('answers-grid');
+            answersGrid.innerHTML = '';
+            
+            question.answers.forEach((answer, index) => {
+                const button = document.createElement('button');
+                button.className = 'answer-button';
+                button.textContent = answer;
+                button.onclick = () => selectAnswer(index);
+                answersGrid.appendChild(button);
+            });
+            
+            document.getElementById('next-question').style.display = 'none';
+        }
+
+        function selectAnswer(selectedIndex) {
+            if (!gameActive) return;
+            
+            const question = triviaQuestions[currentQuestionIndex];
+            const buttons = document.querySelectorAll('.answer-button');
+            
+            buttons.forEach((button, index) => {
+                if (index === question.correct) {
+                    button.classList.add('correct');
+                } else if (index === selectedIndex && selectedIndex !== question.correct) {
+                    button.classList.add('incorrect');
+                }
+                button.onclick = null; // Disable clicking
+            });
+            
+            if (selectedIndex === question.correct) {
+                score++;
+                document.getElementById('trivia-result').textContent = getCorrectResponse();
+                document.getElementById('trivia-result').style.color = '#4caf50';
+            } else {
+                document.getElementById('trivia-result').textContent = question.funnyWrong;
+                document.getElementById('trivia-result').style.color = 'var(--md-sys-color-error)';
+            }
+            
+            updateScore();
+            document.getElementById('next-question').style.display = 'block';
+            
+            // Add some competitive programming humor
+            if (Math.random() < 0.3) {
+                setTimeout(() => {
+                    const cpJokes = [
+                        "Time Limit Exceeded on this question!",
+                        "Memory Limit Exceeded - too much Family Guy knowledge!",
+                        "Runtime Error: Brain not found!",
+                        "Wrong Answer - but at least it compiled!"
+                    ];
+                    const randomJoke = cpJokes[Math.floor(Math.random() * cpJokes.length)];
+                    document.getElementById('trivia-result').textContent += " | " + randomJoke;
+                }, 1500);
+            }
+        }
+
+        function getCorrectResponse() {
+            const responses = [
+                "Correct! You're smarter than Peter at a Jeopardy tournament!",
+                "Right! You've passed the algorithm interview!",
+                "Correct! Your Big O notation knowledge is showing!",
+                "Bingo! You're more reliable than Quagmire's pickup lines!",
+                "Yes! You understand this better than Chris understands... anything!",
+                "Correct! Accepted in 0.001 seconds!",
+                "Right! No Time Limit Exceeded here!"
+            ];
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            showQuestion();
+            document.getElementById('trivia-result').textContent = '';
+        }
+
+        function updateScore() {
+            document.getElementById('score').textContent = `Score: ${score}/${currentQuestionIndex + 1}`;
+        }
+
+        function endGame() {
+            gameActive = false;
+            document.getElementById('question-card').style.display = 'none';
+            document.getElementById('start-trivia').style.display = 'block';
+            document.getElementById('next-question').style.display = 'none';
+            
+            const percentage = Math.round((score / triviaQuestions.length) * 100);
+            let message = "";
+            
+            if (percentage >= 90) {
+                message = "🏆 Perfect! You know more about hyprox1413 than Peter knows about beer!";
+            } else if (percentage >= 70) {
+                message = "🎉 Great job! You're as knowledgeable as Brian thinks he is!";
+            } else if (percentage >= 50) {
+                message = "👍 Not bad! You're smarter than the average Family Guy character!";
+            } else if (percentage >= 30) {
+                message = "😅 Could be better... You're about as informed as Chris!";
+            } else {
+                message = "💀 Oof... You know less about this than Meg knows about being popular!";
+            }
+            
+            document.getElementById('trivia-result').textContent = `Final Score: ${score}/${triviaQuestions.length} (${percentage}%) - ${message}`;
+            document.getElementById('trivia-result').style.color = 'var(--md-sys-color-primary)';
+        }
+
+        // Add some random Family Guy quotes that appear periodically
+        const familyGuyQuotes = [
+            "\"You know what really grinds my gears? Inefficient algorithms!\" - Peter Griffin",
+            "\"Giggity giggity, binary search!\" - Glenn Quagmire", 
+            "\"This is worse than the time I tried to explain recursion to Peter!\" - Brian Griffin",
+            "\"Shut up, Meg! Nobody asked about your sorting preferences!\" - Peter Griffin",
+            "\"Hey Lois, remember when I invented the internet?\" - Peter Griffin"
+        ];
+
+        // Randomly show quotes every 30-60 seconds
+        setInterval(() => {
+            if (Math.random() < 0.3) {
+                const quote = familyGuyQuotes[Math.floor(Math.random() * familyGuyQuotes.length)];
+                // Create a temporary notification
+                const notification = document.createElement('div');
+                notification.style.position = 'fixed';
+                notification.style.top = '20px';
+                notification.style.right = '20px';
+                notification.style.background = 'var(--md-sys-color-tertiary-container)';
+                notification.style.color = 'var(--md-sys-color-on-tertiary-container)';
+                notification.style.padding = '12px';
+                notification.style.borderRadius = '8px';
+                notification.style.maxWidth = '300px';
+                notification.style.zIndex = '1000';
+                notification.style.fontSize = '14px';
+                notification.textContent = quote;
+                
+                document.body.appendChild(notification);
+                
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 5000);
+            }
+        }, Math.random() * 30000 + 30000); // 30-60 seconds
+    </script>
+</body>
+</html>
