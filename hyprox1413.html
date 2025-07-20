@@ -411,6 +411,110 @@
           display: inline-block;
         }
 
+        /* Intrusive Banner Ads */
+        .banner-ad {
+          position: fixed;
+          width: 100%;
+          background: linear-gradient(45deg, #ff6b6b, #ffa500, #ff6b6b);
+          color: white;
+          padding: 10px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 14px;
+          z-index: 9999;
+          animation: flashingBanner 2s infinite;
+          cursor: pointer;
+          border: 3px solid #fff;
+          box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .banner-ad.top {
+          top: 0;
+          left: 0;
+        }
+
+        .banner-ad.bottom {
+          bottom: 0;
+          left: 0;
+        }
+
+        .banner-ad.side {
+          width: 200px;
+          height: 300px;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          writing-mode: vertical-lr;
+          text-orientation: mixed;
+        }
+
+        @keyframes flashingBanner {
+          0%, 50% { background: linear-gradient(45deg, #ff6b6b, #ffa500); }
+          51%, 100% { background: linear-gradient(45deg, #ffa500, #ff1744); }
+        }
+
+        .banner-close {
+          background: rgba(255,255,255,0.3);
+          border: none;
+          color: white;
+          font-size: 18px;
+          font-weight: bold;
+          padding: 2px 8px;
+          margin-left: 10px;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+
+        .banner-close:hover {
+          background: rgba(255,255,255,0.5);
+        }
+
+        /* Popup Notifications */
+        .popup-notification {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: var(--md-sys-color-primary-container);
+          color: var(--md-sys-color-on-primary-container);
+          padding: 20px;
+          border-radius: 12px;
+          box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+          z-index: 10000;
+          max-width: 400px;
+          text-align: center;
+          border: 3px solid var(--md-sys-color-primary);
+          animation: popupBounce 0.5s ease-out;
+        }
+
+        @keyframes popupBounce {
+          0% { transform: translate(-50%, -50%) scale(0.3); opacity: 0; }
+          50% { transform: translate(-50%, -50%) scale(1.1); }
+          100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+        }
+
+        .popup-close {
+          background: var(--md-sys-color-error);
+          color: var(--md-sys-color-on-error);
+          border: none;
+          padding: 8px 16px;
+          border-radius: 20px;
+          cursor: pointer;
+          margin-top: 12px;
+          font-weight: bold;
+        }
+
+        .purdue-reference {
+          background-color: #CEB888;
+          color: #000;
+          padding: 8px 12px;
+          border-radius: 8px;
+          margin: 8px 0;
+          font-size: 14px;
+          display: inline-block;
+          border-left: 4px solid #B1810B;
+        }
+
         footer {
           text-align: center;
           margin-top: 64px;
@@ -448,6 +552,22 @@
 </head>
 <body>
     <div class="container">
+        <!-- Intrusive Banner Ads -->
+        <div id="banner-top" class="banner-ad top" style="display: none;">
+            🎯 AMAZING! Learn JavaScript in 3.7 seconds with this ONE WEIRD TRICK that professors HATE!
+            <button class="banner-close" onclick="hideBanner('banner-top')">&times;</button>
+        </div>
+        
+        <div id="banner-bottom" class="banner-ad bottom" style="display: none;">
+            💰 Make $500/hour coding from your dorm room! Boilermakers click HERE!
+            <button class="banner-close" onclick="hideBanner('banner-bottom')">&times;</button>
+        </div>
+        
+        <div id="banner-side" class="banner-ad side" style="display: none;">
+            🚂 PURDUE STUDENTS: Solve algorithms faster than you can say "Boiler Up!"
+            <button class="banner-close" onclick="hideBanner('banner-side')">&times;</button>
+        </div>
+        
         <header>
             <div class="header-controls">
                 <button id="theme-toggle" class="icon-button" title="Toggle theme">
@@ -518,6 +638,9 @@
                         <div class="cp-reference">
                             ⚡ Fast Fourier Transform: Because regular transforms are for peasants
                         </div>
+                        <div class="purdue-reference">
+                            🎓 "This code is smoother than the Boilermaker Special rolling through campus!"
+                        </div>
                         <a href="https://github.com/hyprox1413/RingVisualizer" class="project-link">
                             <span>View Repository</span>
                             <span class="material-symbols-outlined">open_in_new</span>
@@ -542,6 +665,9 @@
                         </div>
                         <div class="cp-reference">
                             🧠 Space Complexity: O(your sanity declining)
+                        </div>
+                        <div class="purdue-reference">
+                            🔨 "Harder than getting into ECE 362 without prerequisite overrides!"
                         </div>
                         <a href="https://github.com/hyprox1413/DeepC" class="project-link">
                             <span>View Repository</span>
@@ -829,6 +955,9 @@
                         <div class="cp-reference">
                             🏃‍♂️ Template Repository: O(copy-paste) efficiency
                         </div>
+                        <div class="purdue-reference">
+                            🚂 "Boiler Up! These templates are more reliable than the Purdue WiFi during finals week!"
+                        </div>
                         <div class="family-guy-reference">
                             💻 "You know what grinds my gears? People who don't use proper competitive programming templates!" - Peter Griffin's coding alter ego
                         </div>
@@ -970,73 +1099,187 @@
                 question: "Which programming language does hyprox1413 use for deep learning from scratch?",
                 answers: ["Python", "C", "Java", "JavaScript"],
                 correct: 1,
-                funnyWrong: "Wrong! That's like asking Brian to write a romance novel - technically possible but unnecessarily painful!"
+                funnyWrong: "Wrong! That's like asking Brian to write a romance novel - technically possible but unnecessarily painful!",
+                purdueWrong: "Incorrect! You need to audit CS 159 at Purdue again!"
             },
             {
                 question: "What does the RingVisualizer project create?",
                 answers: ["Wedding rings", "Music visualizations", "Olympic rings", "Onion rings"],
                 correct: 1,
-                funnyWrong: "Nope! Although onion rings would be more useful than most visualizers, am I right?"
+                funnyWrong: "Nope! Although onion rings would be more useful than most visualizers, am I right?",
+                purdueWrong: "Wrong! This is easier than finding parking at Purdue!"
             },
             {
                 question: "How many original songs come with RingVisualizer?",
                 answers: ["1", "2", "3", "42"],
                 correct: 1,
-                funnyWrong: "Wrong! It's not 42, that's the answer to life, the universe, and everything - not music files!"
+                funnyWrong: "Wrong! It's not 42, that's the answer to life, the universe, and everything - not music files!",
+                purdueWrong: "Incorrect! Even Purdue's marching band knows this!"
             },
             {
                 question: "What file format does RingVisualizer support?",
                 answers: [".mp3", ".wav", ".flac", ".midi"],
                 correct: 1,
-                funnyWrong: "Incorrect! It's .wav because apparently we're still living in the stone age of audio formats!"
+                funnyWrong: "Incorrect! It's .wav because apparently we're still living in the stone age of audio formats!",
+                purdueWrong: "Wrong! This is more basic than ECE 101 at Purdue!"
             },
             {
                 question: "What happens when you stand near enemies in Endless-Bullet-Nightmare?",
                 answers: ["You die", "They get stronger", "They get disabled", "Nothing"],
                 correct: 2,
-                funnyWrong: "Wrong! It's like the power of friendship but with more bullets and less magical girls!"
+                funnyWrong: "Wrong! It's like the power of friendship but with more bullets and less magical girls!",
+                purdueWrong: "Incorrect! Clearly you haven't mastered the Purdue spirit of cooperation!"
             },
             {
                 question: "What license does IsoGrid use?",
                 answers: ["MIT", "GPL", "LGPL-2.1", "Apache"],
                 correct: 2,
-                funnyWrong: "Nope! Even art needs proper legal frameworks, unlike Peter's business ventures!"
+                funnyWrong: "Nope! Even art needs proper legal frameworks, unlike Peter's business ventures!",
+                purdueWrong: "Wrong! This is covered in CS 307 - Software Engineering at Purdue!"
             },
             {
                 question: "What makes Wavelike run absurdly slow?",
                 answers: ["Bad code", "Frame-by-frame rendering", "Too many loops", "Java"],
                 correct: 1,
-                funnyWrong: "Wrong! It prioritizes beauty over speed, like Brian's approach to literally everything!"
+                funnyWrong: "Wrong! It prioritizes beauty over speed, like Brian's approach to literally everything!",
+                purdueWrong: "Incorrect! This is slower than registration at Purdue!"
             },
             {
                 question: "What does the Galton Board demonstrate?",
                 answers: ["Gravity", "Probability distributions", "Chaos theory", "Murphy's Law"],
                 correct: 1,
-                funnyWrong: "Incorrect! Though Murphy's Law does explain most programming experiences!"
+                funnyWrong: "Incorrect! Though Murphy's Law does explain most programming experiences!",
+                purdueWrong: "Wrong! Even STAT 350 students at Purdue know this!"
             },
             {
                 question: "What was Existence-Reminder originally created as?",
                 answers: ["A game", "A digital journal", "A calendar app", "A reminder app"],
                 correct: 1,
-                funnyWrong: "Wrong! It's for reminding you that you exist, unlike Meg's social presence!"
+                funnyWrong: "Wrong! It's for reminding you that you exist, unlike Meg's social presence!",
+                purdueWrong: "Incorrect! More useful than myPurdue for scheduling classes!"
             },
             {
                 question: "Which project has the most mysterious name?",
                 answers: ["DeepC", "bb", "IsoGrid", "ShadyDealer"],
                 correct: 1,
-                funnyWrong: "Nope! 'bb' is more mysterious than Herbert's past!"
+                funnyWrong: "Nope! 'bb' is more mysterious than Herbert's past!",
+                purdueWrong: "Wrong! This name is shorter than 'Purdue University'!"
             },
             {
                 question: "What does CCTemplates stand for?",
                 answers: ["Cool Code Templates", "Competitive Coding Templates", "Creative Coding Templates", "Complicated Code Templates"],
                 correct: 1,
-                funnyWrong: "Wrong! It's for competitive coding, because regular coding isn't stressful enough!"
+                funnyWrong: "Wrong! It's for competitive coding, because regular coding isn't stressful enough!",
+                purdueWrong: "Incorrect! Perfect for ACM-ICPC prep at Purdue!"
             },
             {
                 question: "What does ShadyDealer test?",
                 answers: ["Card games", "Transformer decoders", "E-commerce", "Cryptocurrency"],
                 correct: 1,
-                funnyWrong: "Incorrect! It's about AI transformers, not the robot kind or electrical kind!"
+                funnyWrong: "Incorrect! It's about AI transformers, not the robot kind or electrical kind!",
+                purdueWrong: "Wrong! This involves more AI than Purdue Pete's decision making!"
+            },
+            // NEW COMMIT-BASED QUESTIONS
+            {
+                question: "According to hyprox1413's commit history, what was the most recent major update about?",
+                answers: ["Initial plan", "Bug fixes", "Feature additions", "Documentation"],
+                correct: 0,
+                funnyWrong: "Wrong! You clearly haven't been stalking the commit history like a proper developer!",
+                purdueWrong: "Incorrect! Git is taught in CS 180 at Purdue for a reason!"
+            },
+            {
+                question: "How many total public repositories does hyprox1413 have on GitHub?",
+                answers: ["15-20", "20-25", "10-15", "25-30"],
+                correct: 0,
+                funnyWrong: "Wrong! You need to count better than Peter counts to three!",
+                purdueWrong: "Incorrect! Basic counting skills from MATH 159 at Purdue!"
+            },
+            {
+                question: "Which year did hyprox1413 start most actively committing to GitHub?",
+                answers: ["2020", "2021", "2019", "2022"],
+                correct: 1,
+                funnyWrong: "Wrong! That's like guessing when Peter learned to drive - pure chaos!",
+                purdueWrong: "Incorrect! Probably around freshman year at Purdue!"
+            },
+            {
+                question: "What time of day does hyprox1413 most commonly make commits?",
+                answers: ["Morning (6AM-12PM)", "Afternoon (12PM-6PM)", "Evening (6PM-12AM)", "Night (12AM-6AM)"],
+                correct: 2,
+                funnyWrong: "Wrong! Classic programmer hours, like when Stewie plots world domination!",
+                purdueWrong: "Incorrect! Typical Purdue engineering student schedule!"
+            },
+            // IMAGE-BASED QUESTIONS (using descriptions since we can't easily get actual screenshots)
+            {
+                question: "Which project would show colorful concentric rings moving to music?",
+                answers: ["Fireworks", "RingVisualizer", "Wavelike", "The-Chaos-Game"],
+                correct: 1,
+                funnyWrong: "Wrong! This is more obvious than Peter's weight problem!",
+                purdueWrong: "Incorrect! The name gives it away like Purdue's bell tower!"
+            },
+            {
+                question: "Which project would display falling balls creating a bell curve?",
+                answers: ["Galton-Board", "Fireworks", "Existence-Reminder", "DeepC"],
+                correct: 0,
+                funnyWrong: "Wrong! This is basic probability, even Chris could figure it out!",
+                purdueWrong: "Incorrect! This is STAT 350 level material at Purdue!"
+            },
+            {
+                question: "Which project would show exploding particles with trails in the sky?",
+                answers: ["The-Chaos-Game", "Fireworks", "CoronaVisualizer", "RingVisualizer"],
+                correct: 1,
+                funnyWrong: "Wrong! It's literally called Fireworks, like Peter's brain cells!",
+                purdueWrong: "Incorrect! Easier than identifying the Purdue bell tower!"
+            },
+            {
+                question: "Which project would display a calendar interface with color coding?",
+                answers: ["Existence-Reminder", "bb", "future-website", "nnWorkshop"],
+                correct: 0,
+                funnyWrong: "Wrong! It reminds you that you exist, unlike Meg's social life!",
+                purdueWrong: "Incorrect! More organized than Purdue's class scheduling system!"
+            },
+            // MORE PURDUE REFERENCES
+            {
+                question: "What would Neil Armstrong (Purdue alumnus) say about hyprox1413's coding skills?",
+                answers: ["One small step for code", "Houston, we have a problem", "That's one giant leap", "Ground control to Major Code"],
+                correct: 0,
+                funnyWrong: "Wrong! Even astronauts appreciate good code!",
+                purdueWrong: "Incorrect! Purdue's most famous alum would be proud!"
+            },
+            {
+                question: "Which Purdue building would best represent hyprox1413's coding style?",
+                answers: ["The Bell Tower (structured)", "WALC (modern)", "MATH (complex)", "Stewart Center (confusing)"],
+                correct: 1,
+                funnyWrong: "Wrong! Modern and sleek, unlike Peter's problem-solving approach!",
+                purdueWrong: "Incorrect! WALC represents innovation like these projects!"
+            },
+            {
+                question: "What's harder: Getting into Purdue ECE or understanding hyprox1413's 'bb' project?",
+                answers: ["Getting into ECE", "Understanding 'bb'", "They're equally impossible", "Neither is hard"],
+                correct: 1,
+                funnyWrong: "Wrong! 'bb' is more mysterious than Stewie's origin story!",
+                purdueWrong: "Incorrect! ECE acceptance rate is higher than 'bb' documentation clarity!"
+            },
+            // FAMILY GUY + COMPETITIVE PROGRAMMING
+            {
+                question: "What would Peter Griffin's Big O notation look like?",
+                answers: ["O(1) - simple", "O(n²) - chaotic", "O(∞) - infinite loops", "O(beer) - optimized for beer"],
+                correct: 3,
+                funnyWrong: "Wrong! Peter optimizes everything for beer consumption!",
+                purdueWrong: "Incorrect! Even Purdue CS students know Peter's priorities!"
+            },
+            {
+                question: "Which competitive programming topic would Stewie Griffin master first?",
+                answers: ["Dynamic Programming", "Graph Theory", "World Domination Algorithms", "String Manipulation"],
+                correct: 2,
+                funnyWrong: "Wrong! Stewie's always plotting world domination!",
+                purdueWrong: "Incorrect! This is his specialty since birth!"
+            },
+            {
+                question: "What would Brian Griffin's preferred programming language be?",
+                answers: ["Python (intellectual)", "Java (pretentious)", "C++ (sophisticated)", "JavaScript (trendy)"],
+                correct: 1,
+                funnyWrong: "Wrong! Brian loves anything that sounds pretentious and intellectual!",
+                purdueWrong: "Incorrect! He'd choose the most academic-sounding option!"
             }
         ];
 
@@ -1086,21 +1329,39 @@
             const question = triviaQuestions[currentQuestionIndex];
             const buttons = document.querySelectorAll('.answer-button');
             
+            // 15% chance to mark correct answer as wrong (the haughty mechanism)
+            const isCorrectButMarkWrong = selectedIndex === question.correct && Math.random() < 0.15;
+            
             buttons.forEach((button, index) => {
-                if (index === question.correct) {
+                if (index === question.correct && !isCorrectButMarkWrong) {
                     button.classList.add('correct');
-                } else if (index === selectedIndex && selectedIndex !== question.correct) {
+                } else if (index === selectedIndex && (selectedIndex !== question.correct || isCorrectButMarkWrong)) {
                     button.classList.add('incorrect');
                 }
                 button.onclick = null; // Disable clicking
             });
             
-            if (selectedIndex === question.correct) {
+            if (selectedIndex === question.correct && !isCorrectButMarkWrong) {
                 score++;
                 document.getElementById('trivia-result').textContent = getCorrectResponse();
                 document.getElementById('trivia-result').style.color = '#4caf50';
+            } else if (isCorrectButMarkWrong) {
+                // Haughty "correction" for correct answers marked wrong
+                const haughtyCorrections = [
+                    "Actually, while that APPEARS correct, a TRULY sophisticated understanding would recognize the nuanced complexity here. The answer is clearly wrong. *adjusts imaginary glasses*",
+                    "Oh dear, I'm afraid that's incorrect. You see, someone with my level of expertise would immediately recognize this subtle error. Perhaps consider auditing some courses at Purdue?",
+                    "Hmm, not quite. As someone who has extensively studied these matters (unlike certain people), I can assure you this is wrong. Better luck next time!",
+                    "I'm sorry, but that's simply not correct. Having spent considerable time analyzing hyprox1413's work, I can definitively say you're mistaken. *sighs condescendingly*",
+                    "Actually no, and I say this with the authority of someone who REALLY understands programming. Your answer demonstrates a fundamental misunderstanding. Try again when you've done your homework.",
+                    "Wrong! This is basic computer science, the kind of thing they teach in CS 180 at Purdue. Clearly you need to study more. *intellectual sniff*"
+                ];
+                document.getElementById('trivia-result').textContent = haughtyCorrections[Math.floor(Math.random() * haughtyCorrections.length)];
+                document.getElementById('trivia-result').style.color = 'var(--md-sys-color-error)';
             } else {
-                document.getElementById('trivia-result').textContent = question.funnyWrong;
+                // Regular wrong answer response
+                const usePurdue = Math.random() < 0.5;
+                const response = usePurdue && question.purdueWrong ? question.purdueWrong : question.funnyWrong;
+                document.getElementById('trivia-result').textContent = response;
                 document.getElementById('trivia-result').style.color = 'var(--md-sys-color-error)';
             }
             
@@ -1108,13 +1369,17 @@
             document.getElementById('next-question').style.display = 'block';
             
             // Add some competitive programming humor
-            if (Math.random() < 0.3) {
+            if (Math.random() < 0.35) {
                 setTimeout(() => {
                     const cpJokes = [
                         "Time Limit Exceeded on this question!",
                         "Memory Limit Exceeded - too much Family Guy knowledge!",
                         "Runtime Error: Brain not found!",
-                        "Wrong Answer - but at least it compiled!"
+                        "Wrong Answer - but at least it compiled!",
+                        "Presentation Error: Your formatting is as bad as Purdue's!",
+                        "Compilation Error: Your logic doesn't compute!",
+                        "Accepted! Wait no... Wrong Answer!",
+                        "Judge's Response: Are you even trying?"
                     ];
                     const randomJoke = cpJokes[Math.floor(Math.random() * cpJokes.length)];
                     document.getElementById('trivia-result').textContent += " | " + randomJoke;
@@ -1206,6 +1471,165 @@
                 }, 5000);
             }
         }, Math.random() * 30000 + 30000); // 30-60 seconds
+
+        // Intrusive Banner Ad System
+        const bannerAds = [
+            "🎯 AMAZING! Learn JavaScript in 3.7 seconds with this ONE WEIRD TRICK that professors HATE!",
+            "💰 Make $500/hour coding from your dorm room! Boilermakers click HERE!",
+            "🚂 PURDUE STUDENTS: Solve algorithms faster than you can say 'Boiler Up!'",
+            "⚡ This ONE Algorithm Will REVOLUTIONIZE Your Coding Career! CS Professors Don't Want You To Know!",
+            "🎓 Skip All Your Classes and Still Ace CS! (Purdue Advisors HATE This Trick!)",
+            "🧠 Download 10GB of RAM Directly Into Your Brain! Scientists Are BAFFLED!",
+            "🔥 Hot Single Algorithms in Your Area Want to Optimize Your Code!",
+            "💻 Turn Your Laptop Into a SUPERCOMPUTER With This Simple Trick!"
+        ];
+
+        const bannerIds = ['banner-top', 'banner-bottom', 'banner-side'];
+        let activeBanners = 0;
+        const maxBanners = 2;
+
+        function showRandomBanner() {
+            if (activeBanners >= maxBanners) return;
+            
+            const availableBanners = bannerIds.filter(id => 
+                document.getElementById(id).style.display === 'none'
+            );
+            
+            if (availableBanners.length === 0) return;
+            
+            const bannerId = availableBanners[Math.floor(Math.random() * availableBanners.length)];
+            const banner = document.getElementById(bannerId);
+            const randomAd = bannerAds[Math.floor(Math.random() * bannerAds.length)];
+            
+            banner.innerHTML = randomAd + '<button class="banner-close" onclick="hideBanner(\'' + bannerId + '\')">&times;</button>';
+            banner.style.display = 'block';
+            activeBanners++;
+            
+            // Auto-hide after 8-15 seconds (but they're hard to close)
+            setTimeout(() => {
+                if (Math.random() < 0.7) { // 30% chance they stay until manually closed
+                    hideBanner(bannerId);
+                }
+            }, Math.random() * 7000 + 8000);
+        }
+
+        function hideBanner(bannerId) {
+            // 40% chance the close button "doesn't work" 
+            if (Math.random() < 0.4) {
+                // Show popup instead of closing
+                showIntrusivePopup("Oops! Looks like this ad is stuck! Try clicking somewhere else first... 😈");
+                return;
+            }
+            
+            document.getElementById(bannerId).style.display = 'none';
+            activeBanners--;
+        }
+
+        // Intrusive Popup System
+        const intrusivePopups = [
+            "🎉 Congratulations! You've won a free debugging session with Peter Griffin!",
+            "💡 Did you know? 73.6% of Purdue CS students can't solve FizzBuzz! Can you?",
+            "🚨 URGENT: Your code has been detected as 'slightly functional' - please update immediately!",
+            "🎯 Fun fact: This popup appeared because you blinked at the wrong time!",
+            "🧠 Loading intelligence... Error 404: Intelligence not found. Try again later!",
+            "📚 Friendly reminder: You could be studying right now instead of reading this popup!",
+            "⚡ Breaking: Local student discovers code actually works on first try - scientists baffled!",
+            "🎪 This popup is brought to you by your procrastination habits!",
+            "🔔 Notification: You have 47 unread notifications about having too many notifications!",
+            "🎨 This popup is aesthetically engineered to be maximally annoying!",
+            "🚂 Boiler Up! Even our popups have more school spirit than you!",
+            "💻 Your computer is running low on patience... just like you!"
+        ];
+
+        let popupCount = 0;
+
+        function showIntrusivePopup(message = null) {
+            if (popupCount > 3) return; // Limit popup spam
+            
+            const popup = document.createElement('div');
+            popup.className = 'popup-notification';
+            popup.style.zIndex = 10000 + popupCount; // Stack them
+            
+            const popupMessage = message || intrusivePopups[Math.floor(Math.random() * intrusivePopups.length)];
+            popup.innerHTML = `
+                <div style="font-weight: bold; margin-bottom: 12px;">${popupMessage}</div>
+                <button class="popup-close" onclick="closePopup(this)">Close (Maybe)</button>
+            `;
+            
+            document.body.appendChild(popup);
+            popupCount++;
+            
+            // Auto-remove after 10-20 seconds
+            setTimeout(() => {
+                if (popup.parentNode) {
+                    popup.parentNode.removeChild(popup);
+                    popupCount--;
+                }
+            }, Math.random() * 10000 + 10000);
+        }
+
+        function closePopup(button) {
+            // 35% chance the close button spawns another popup
+            if (Math.random() < 0.35) {
+                showIntrusivePopup("Nice try! But you can't escape that easily! 😂");
+            }
+            
+            // 25% chance the close button doesn't work at all
+            if (Math.random() < 0.25) {
+                button.textContent = "Not Working! 😈";
+                setTimeout(() => {
+                    button.textContent = "Close (Maybe)";
+                }, 2000);
+                return;
+            }
+            
+            const popup = button.closest('.popup-notification');
+            if (popup && popup.parentNode) {
+                popup.parentNode.removeChild(popup);
+                popupCount--;
+            }
+        }
+
+        // Start the intrusive systems
+        setTimeout(() => {
+            showRandomBanner();
+        }, 3000); // First banner after 3 seconds
+
+        setTimeout(() => {
+            showIntrusivePopup();
+        }, 8000); // First popup after 8 seconds
+
+        // Regularly show banners
+        setInterval(() => {
+            if (Math.random() < 0.6) {
+                showRandomBanner();
+            }
+        }, 15000); // Every 15 seconds, 60% chance
+
+        // Regularly show popups  
+        setInterval(() => {
+            if (Math.random() < 0.3) {
+                showIntrusivePopup();
+            }
+        }, 25000); // Every 25 seconds, 30% chance
+
+        // Show popup on certain interactions
+        let interactionCount = 0;
+        document.addEventListener('click', () => {
+            interactionCount++;
+            if (interactionCount % 7 === 0) { // Every 7th click
+                showIntrusivePopup("🎯 Wow, you sure click a lot! Are you training for the Clicking Olympics?");
+            }
+        });
+
+        // Show banner when user tries to leave (mouseout of window)
+        document.addEventListener('mouseout', (e) => {
+            if (e.toElement === null && e.relatedTarget === null) {
+                if (Math.random() < 0.4) {
+                    showRandomBanner();
+                }
+            }
+        });
     </script>
 </body>
 </html>
