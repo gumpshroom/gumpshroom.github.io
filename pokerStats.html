@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker Win Rate Statistics Calculator</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Calculate poker session statistics including win rate, confidence intervals, and BB/100">
+    <meta name="theme-color" content="#6750a4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Poker Stats">
+    <meta name="msapplication-TileColor" content="#6750a4">
+    
+    <!-- Material Design 3 Icons and Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Material Design 3 CSS Custom Properties */
+        :root {
+          /* Light Theme Colors */
+          --md-sys-color-primary: #6750a4;
+          --md-sys-color-on-primary: #ffffff;
+          --md-sys-color-primary-container: #eaddff;
+          --md-sys-color-on-primary-container: #21005d;
+          
+          --md-sys-color-secondary: #625b71;
+          --md-sys-color-on-secondary: #ffffff;
+          --md-sys-color-secondary-container: #e8def8;
+          --md-sys-color-on-secondary-container: #1d192b;
+          
+          --md-sys-color-tertiary: #7d5260;
+          --md-sys-color-on-tertiary: #ffffff;
+          --md-sys-color-tertiary-container: #ffd8e4;
+          --md-sys-color-on-tertiary-container: #31111d;
+          
+          --md-sys-color-surface: #fffbfe;
+          --md-sys-color-on-surface: #1c1b1f;
+          --md-sys-color-surface-variant: #e7e0ec;
+          --md-sys-color-on-surface-variant: #49454f;
+          
+          --md-sys-color-background: #fffbfe;
+          --md-sys-color-on-background: #1c1b1f;
+          
+          --md-sys-color-outline: #79747e;
+          --md-sys-color-outline-variant: #cac4d0;
+          
+          --md-sys-color-error: #ba1a1a;
+          --md-sys-color-on-error: #ffffff;
+          --md-sys-color-error-container: #ffdad6;
+          --md-sys-color-on-error-container: #410002;
+          
+          /* Shadow */
+          --md-sys-elevation-shadow: rgba(0, 0, 0, 0.2);
+          
+          /* Typography */
+          --md-sys-typescale-display-large-font: 'Roboto';
+          --md-sys-typescale-headline-large-font: 'Roboto';
+          --md-sys-typescale-headline-large-size: 32px;
+          --md-sys-typescale-headline-large-weight: 400;
+          --md-sys-typescale-headline-large-line-height: 40px;
+          
+          --md-sys-typescale-title-large-font: 'Roboto';
+          --md-sys-typescale-title-large-size: 22px;
+          --md-sys-typescale-title-large-weight: 400;
+          --md-sys-typescale-title-large-line-height: 28px;
+          
+          --md-sys-typescale-body-large-font: 'Roboto';
+          --md-sys-typescale-body-large-size: 16px;
+          --md-sys-typescale-body-large-weight: 400;
+          --md-sys-typescale-body-large-line-height: 24px;
+          
+          --md-sys-typescale-label-large-font: 'Roboto';
+          --md-sys-typescale-label-large-size: 14px;
+          --md-sys-typescale-label-large-weight: 500;
+          --md-sys-typescale-label-large-line-height: 20px;
+        }
+
+        /* Dark Theme Colors */
+        [data-theme="dark"] {
+          --md-sys-color-primary: #d0bcff;
+          --md-sys-color-on-primary: #371e73;
+          --md-sys-color-primary-container: #4f378b;
+          --md-sys-color-on-primary-container: #eaddff;
+          
+          --md-sys-color-secondary: #ccc2dc;
+          --md-sys-color-on-secondary: #332d41;
+          --md-sys-color-secondary-container: #4a4458;
+          --md-sys-color-on-secondary-container: #e8def8;
+          
+          --md-sys-color-tertiary: #efb8c8;
+          --md-sys-color-on-tertiary: #492532;
+          --md-sys-color-tertiary-container: #633b48;
+          --md-sys-color-on-tertiary-container: #ffd8e4;
+          
+          --md-sys-color-surface: #10090d;
+          --md-sys-color-on-surface: #e6e1e5;
+          --md-sys-color-surface-variant: #49454f;
+          --md-sys-color-on-surface-variant: #cac4d0;
+          
+          --md-sys-color-background: #10090d;
+          --md-sys-color-on-background: #e6e1e5;
+          
+          --md-sys-color-outline: #938f99;
+          --md-sys-color-outline-variant: #49454f;
+          
+          --md-sys-color-error: #ffb4ab;
+          --md-sys-color-on-error: #690005;
+          --md-sys-color-error-container: #93000a;
+          --md-sys-color-on-error-container: #ffdad6;
+        }
+
+        /* Reset and Base Styles */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: var(--md-sys-typescale-body-large-font);
+          font-size: var(--md-sys-typescale-body-large-size);
+          font-weight: var(--md-sys-typescale-body-large-weight);
+          line-height: var(--md-sys-typescale-body-large-line-height);
+          background-color: var(--md-sys-color-background);
+          color: var(--md-sys-color-on-background);
+          transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+          max-width: 1000px;
+          margin: 0 auto;
+          padding: 24px;
+          min-height: 100vh;
+        }
+
+        header {
+          text-align: center;
+          margin-bottom: 48px;
+        }
+
+        .header-controls {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 24px;
+        }
+
+        .icon-button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 12px;
+          border-radius: 50%;
+          color: var(--md-sys-color-on-surface-variant);
+          transition: all 0.3s ease;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .icon-button:hover {
+          background-color: var(--md-sys-color-outline-variant);
+        }
+
+        .icon-button .material-symbols-outlined {
+          font-size: 24px;
+        }
+
+        h1 {
+          font-family: var(--md-sys-typescale-headline-large-font);
+          font-size: var(--md-sys-typescale-headline-large-size);
+          font-weight: var(--md-sys-typescale-headline-large-weight);
+          line-height: var(--md-sys-typescale-headline-large-line-height);
+          color: var(--md-sys-color-on-background);
+          margin-bottom: 8px;
+        }
+
+        .subtitle {
+          font-size: var(--md-sys-typescale-body-large-size);
+          color: var(--md-sys-color-on-surface-variant);
+          margin-bottom: 24px;
+        }
+
+        .card {
+          background-color: var(--md-sys-color-surface);
+          border: 1px solid var(--md-sys-color-outline-variant);
+          border-radius: 16px;
+          padding: 24px;
+          margin-bottom: 24px;
+        }
+
+        .card h2 {
+          font-family: var(--md-sys-typescale-title-large-font);
+          font-size: var(--md-sys-typescale-title-large-size);
+          font-weight: var(--md-sys-typescale-title-large-weight);
+          color: var(--md-sys-color-on-surface);
+          margin-bottom: 16px;
+        }
+
+        .form-group {
+          margin-bottom: 20px;
+        }
+
+        .form-group label {
+          display: block;
+          font-weight: 500;
+          margin-bottom: 8px;
+          color: var(--md-sys-color-on-surface);
+        }
+
+        .form-group input,
+        .form-group textarea {
+          width: 100%;
+          padding: 12px 16px;
+          border: 1px solid var(--md-sys-color-outline);
+          border-radius: 8px;
+          background-color: var(--md-sys-color-surface);
+          color: var(--md-sys-color-on-surface);
+          font-family: inherit;
+          font-size: 16px;
+          transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+          outline: none;
+          border-color: var(--md-sys-color-primary);
+          box-shadow: 0 0 0 2px var(--md-sys-color-primary-container);
+        }
+
+        .form-group textarea {
+          resize: vertical;
+          min-height: 100px;
+        }
+
+        .help-text {
+          font-size: 14px;
+          color: var(--md-sys-color-on-surface-variant);
+          margin-top: 4px;
+        }
+
+        .button-primary {
+          background-color: var(--md-sys-color-primary);
+          color: var(--md-sys-color-on-primary);
+          border: none;
+          padding: 12px 24px;
+          border-radius: 20px;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .button-primary:hover {
+          background-color: var(--md-sys-color-primary-container);
+          color: var(--md-sys-color-on-primary-container);
+          box-shadow: 0 2px 8px var(--md-sys-elevation-shadow);
+        }
+
+        .button-secondary {
+          background-color: var(--md-sys-color-secondary-container);
+          color: var(--md-sys-color-on-secondary-container);
+          border: none;
+          padding: 12px 24px;
+          border-radius: 20px;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          margin-left: 8px;
+        }
+
+        .button-secondary:hover {
+          background-color: var(--md-sys-color-secondary);
+          color: var(--md-sys-color-on-secondary);
+        }
+
+        .results {
+          display: none;
+        }
+
+        .results.show {
+          display: block;
+        }
+
+        .stat-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 16px;
+          margin-top: 16px;
+        }
+
+        .stat-item {
+          background-color: var(--md-sys-color-primary-container);
+          padding: 16px;
+          border-radius: 12px;
+        }
+
+        .stat-label {
+          font-size: 14px;
+          font-weight: 500;
+          color: var(--md-sys-color-on-primary-container);
+          margin-bottom: 4px;
+        }
+
+        .stat-value {
+          font-size: 24px;
+          font-weight: 700;
+          color: var(--md-sys-color-on-primary-container);
+        }
+
+        .stat-subtext {
+          font-size: 12px;
+          color: var(--md-sys-color-on-primary-container);
+          opacity: 0.8;
+          margin-top: 4px;
+        }
+
+        .confidence-interval {
+          background-color: var(--md-sys-color-tertiary-container);
+          padding: 16px;
+          border-radius: 12px;
+          margin-top: 16px;
+        }
+
+        .confidence-interval h3 {
+          font-size: 18px;
+          font-weight: 500;
+          color: var(--md-sys-color-on-tertiary-container);
+          margin-bottom: 12px;
+        }
+
+        .ci-item {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 8px;
+        }
+
+        .ci-label {
+          font-weight: 500;
+          color: var(--md-sys-color-on-tertiary-container);
+        }
+
+        .ci-value {
+          font-family: monospace;
+          color: var(--md-sys-color-on-tertiary-container);
+        }
+
+        .error-message {
+          background-color: var(--md-sys-color-error-container);
+          color: var(--md-sys-color-on-error-container);
+          padding: 12px 16px;
+          border-radius: 8px;
+          margin-bottom: 16px;
+          display: none;
+        }
+
+        .error-message.show {
+          display: block;
+        }
+
+        footer {
+          text-align: center;
+          margin-top: 64px;
+          padding: 24px;
+          color: var(--md-sys-color-on-surface-variant);
+          border-top: 1px solid var(--md-sys-color-outline-variant);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+          .container {
+            padding: 16px;
+          }
+          
+          h1 {
+            font-size: 28px;
+            line-height: 36px;
+          }
+
+          .stat-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-controls">
+                <a href="index.html" class="icon-button" title="Back to home">
+                    <span class="material-symbols-outlined">home</span>
+                </a>
+                <button id="theme-toggle" class="icon-button" title="Toggle theme">
+                    <span class="material-symbols-outlined">dark_mode</span>
+                </button>
+            </div>
+            <h1>Poker Win Rate Statistics Calculator</h1>
+            <p class="subtitle">Calculate comprehensive poker session statistics and confidence intervals</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <h2>Session Data</h2>
+                <div class="error-message" id="error-message"></div>
+                
+                <form id="poker-form">
+                    <div class="form-group">
+                        <label for="net-profits">Session Net Profits ($)</label>
+                        <textarea id="net-profits" placeholder="Enter profit/loss for each session, separated by commas or newlines.&#10;Example: 150, -75, 200, 50, -100"></textarea>
+                        <div class="help-text">Enter the net profit or loss for each session (use negative numbers for losses)</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hours-per-session">Hours per Session</label>
+                        <input type="number" id="hours-per-session" step="any" min="0.1" placeholder="e.g., 3.5" required>
+                        <div class="help-text">Average hours played per session</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hands-per-hour">Hands per Hour</label>
+                        <input type="number" id="hands-per-hour" step="any" min="1" placeholder="e.g., 30" required>
+                        <div class="help-text">Average hands played per hour</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="big-blind">Big Blind Size ($)</label>
+                        <input type="number" id="big-blind" step="any" min="0.01" placeholder="e.g., 2.00" required>
+                        <div class="help-text">Size of the big blind in your game</div>
+                    </div>
+
+                    <button type="submit" class="button-primary">
+                        <span class="material-symbols-outlined">calculate</span>
+                        Calculate Statistics
+                    </button>
+                    <button type="button" class="button-secondary" onclick="resetForm()">Reset</button>
+                </form>
+            </div>
+
+            <div class="card results" id="results">
+                <h2>Session Statistics</h2>
+                
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <div class="stat-label">Total Sessions</div>
+                        <div class="stat-value" id="total-sessions">0</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">Net Profit</div>
+                        <div class="stat-value" id="net-profit">$0.00</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">Mean Profit/Session</div>
+                        <div class="stat-value" id="mean-profit">$0.00</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">Standard Deviation</div>
+                        <div class="stat-value" id="std-dev">$0.00</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">BB/100 Hands</div>
+                        <div class="stat-value" id="bb-100">0.00</div>
+                        <div class="stat-subtext">Big blinds per 100 hands</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-label">BB/Hour</div>
+                        <div class="stat-value" id="bb-hour">0.00</div>
+                        <div class="stat-subtext">Big blinds per hour</div>
+                    </div>
+                </div>
+
+                <div class="confidence-interval">
+                    <h3>Confidence Intervals for True Win Rate (BB/100)</h3>
+                    <div class="ci-item">
+                        <span class="ci-label">68% CI (±1σ):</span>
+                        <span class="ci-value" id="ci-68">0.00 to 0.00</span>
+                    </div>
+                    <div class="ci-item">
+                        <span class="ci-label">95% CI (±2σ):</span>
+                        <span class="ci-value" id="ci-95">0.00 to 0.00</span>
+                    </div>
+                    <div class="ci-item">
+                        <span class="ci-label">99.7% CI (±3σ):</span>
+                        <span class="ci-value" id="ci-997">0.00 to 0.00</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with Material Design 3 • Hosted on GitHub Pages</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('.material-symbols-outlined');
+        
+        // Check for saved theme or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            themeIcon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
+        }
+
+        // Form handling
+        document.getElementById('poker-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateStats();
+        });
+
+        function calculateStats() {
+            // Hide error message
+            const errorMsg = document.getElementById('error-message');
+            errorMsg.classList.remove('show');
+            
+            // Get input values
+            const profitsInput = document.getElementById('net-profits').value;
+            const hoursPerSession = parseFloat(document.getElementById('hours-per-session').value);
+            const handsPerHour = parseFloat(document.getElementById('hands-per-hour').value);
+            const bigBlind = parseFloat(document.getElementById('big-blind').value);
+            
+            // Parse profits
+            let profits;
+            try {
+                profits = profitsInput
+                    .split(/[,\n\r]+/)
+                    .map(s => s.trim())
+                    .filter(s => s.length > 0)
+                    .map(s => parseFloat(s));
+                
+                if (profits.length === 0) {
+                    throw new Error('Please enter at least one session profit value');
+                }
+                
+                if (profits.some(isNaN)) {
+                    throw new Error('Invalid profit values. Please enter only numbers.');
+                }
+            } catch (error) {
+                errorMsg.textContent = error.message;
+                errorMsg.classList.add('show');
+                return;
+            }
+            
+            // Validate other inputs
+            if (isNaN(hoursPerSession) || hoursPerSession <= 0) {
+                errorMsg.textContent = 'Please enter a valid hours per session value';
+                errorMsg.classList.add('show');
+                return;
+            }
+            
+            if (isNaN(handsPerHour) || handsPerHour <= 0) {
+                errorMsg.textContent = 'Please enter a valid hands per hour value';
+                errorMsg.classList.add('show');
+                return;
+            }
+            
+            if (isNaN(bigBlind) || bigBlind <= 0) {
+                errorMsg.textContent = 'Please enter a valid big blind size';
+                errorMsg.classList.add('show');
+                return;
+            }
+            
+            // Calculate statistics
+            const n = profits.length;
+            const totalProfit = profits.reduce((sum, p) => sum + p, 0);
+            const meanProfit = totalProfit / n;
+            
+            // Calculate standard deviation
+            const variance = profits.reduce((sum, p) => sum + Math.pow(p - meanProfit, 2), 0) / n;
+            const stdDev = Math.sqrt(variance);
+            
+            // Calculate hands per session
+            const handsPerSession = hoursPerSession * handsPerHour;
+            const totalHands = handsPerSession * n;
+            
+            // Calculate BB/100
+            const bb100 = (totalProfit / bigBlind) / (totalHands / 100);
+            
+            // Calculate BB/hour
+            const bbHour = (totalProfit / bigBlind) / (hoursPerSession * n);
+            
+            // Calculate standard error for BB/100
+            const stdDevBB = stdDev / bigBlind;
+            const stdErrorBB100 = (stdDevBB / Math.sqrt(n)) * Math.sqrt(100 / handsPerSession);
+            
+            // Calculate confidence intervals
+            const ci68Lower = bb100 - stdErrorBB100;
+            const ci68Upper = bb100 + stdErrorBB100;
+            
+            const ci95Lower = bb100 - 2 * stdErrorBB100;
+            const ci95Upper = bb100 + 2 * stdErrorBB100;
+            
+            const ci997Lower = bb100 - 3 * stdErrorBB100;
+            const ci997Upper = bb100 + 3 * stdErrorBB100;
+            
+            // Display results
+            document.getElementById('total-sessions').textContent = n;
+            document.getElementById('net-profit').textContent = formatCurrency(totalProfit);
+            document.getElementById('mean-profit').textContent = formatCurrency(meanProfit);
+            document.getElementById('std-dev').textContent = formatCurrency(stdDev);
+            document.getElementById('bb-100').textContent = bb100.toFixed(2);
+            document.getElementById('bb-hour').textContent = bbHour.toFixed(2);
+            
+            document.getElementById('ci-68').textContent = 
+                `${ci68Lower.toFixed(2)} to ${ci68Upper.toFixed(2)} BB/100`;
+            document.getElementById('ci-95').textContent = 
+                `${ci95Lower.toFixed(2)} to ${ci95Upper.toFixed(2)} BB/100`;
+            document.getElementById('ci-997').textContent = 
+                `${ci997Lower.toFixed(2)} to ${ci997Upper.toFixed(2)} BB/100`;
+            
+            // Show results
+            document.getElementById('results').classList.add('show');
+            
+            // Scroll to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function formatCurrency(value) {
+            const sign = value >= 0 ? '+' : '';
+            return sign + '$' + value.toFixed(2);
+        }
+
+        function resetForm() {
+            document.getElementById('poker-form').reset();
+            document.getElementById('results').classList.remove('show');
+            document.getElementById('error-message').classList.remove('show');
+        }
+    </script>
+</body>
+</html>
